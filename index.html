@@ -92,6 +92,15 @@
       next.addEventListener("click", function() {
         console.log("nextbtn clicked");
       });
+
+      var ss = new SpeechSynthesisUtterance();
+      ss.lang = "en-US";
+      ss.volume = 1.0;
+      ss.rate = 1.0;
+      ss.pitch = 1.0;
+
+      ss.text="Once upon a time, there lived an old couple and a healthy boy in a small village.";
+      speechSynthesis.speak(ss);
     </script>
   </body>
 </html>
