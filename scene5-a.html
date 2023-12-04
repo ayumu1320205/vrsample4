@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+    <script src="scripts/scene5-a-text.js"></script>
+    <!--<script src="myrenderer.js"></script>-->
+  </head>
+  <body>
+    <!--村のシーン-->
+    <a-scene  light="defaultLightsEnabled: false">
+      <!--空-->
+      <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+      
+      <!--床-->
+      <a-plane 
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="300" 
+          height="300" 
+          color="#88cb7f" 
+          shadow
+      ></a-plane>
+
+      <!--木読み込み-->
+      <a-assets>
+        <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
+        <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
+      </a-assets>
+      
+      <!--配置-->
+      <!--家の間の木-->
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="6 0 -2"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 -10"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="15 0 -20"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 6"
+        rotation="0 30 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 20"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 -40"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 -7"
+        rotation="0 -120 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 2"
+        rotation="0 -180 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-1 0 7"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <!--家の奥の木-->
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="25 0 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 -20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-25 0 -3"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 -18"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+
+      <!--家読み込み-->
+      <a-assets>
+        <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
+        <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
+      </a-assets>
+
+      <!--配置-->
+      <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="-7 0 -15"
+        rotation="0 -30 0"
+        scale="2.1 2.1 2.1"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="5 0 -60"
+        rotation="0 -120 0"
+        scale="2.1 2.1 2.1"
+      ></a-entity>
+
+      <!--光-->
+      <a-entity
+          light="
+              type: directional;
+              castShadow: true;
+              color: white;
+              intensity: 1.0" 
+          position="-1 1 1"
+      ></a-entity>
+      
+      <!--反射光-->
+      <a-entity 
+          light="
+              type: ambient;
+              color: gray;"
+      ></a-entity>
+
+      <!--カメラ-->
+      <a-entity id="camera-wrapper" rotation="0 0 0" position="0 2 0">
+        <a-camera
+          id="camera"
+          position="0 0 0"
+          wasd-controls="enabled: true">
+          <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 1000"
+            position="0 0 -0.1"
+            geometry="primitive: ring; radiusInner: 0.025; radiusOuter: 0.0375;"
+            scale="0.1 0.1 0.1"
+            material="color: #316745; shader: flat"
+            animation__fusing="startEvents: fusing; easing: easeInCubic; property: scale; 
+            from: 0.1 0.1 0.1; to: 0.001 0.001 0.001" 
+            animation__click="startEvents: click; easing: easeOutCubic; property: scale; 
+            from: 0.001 0.001 0.001; to: 0.1 0.1 0.1">
+          </a-entity>
+        </a-camera>
+      </a-entity>
+
+      <!--テキスト表示-->
+      <a-entity
+        id="text"
+        position="0 2 -1.5"
+        geometry="primitive: plane; width: 3.0; height: 0.8"
+        material="color: white; opacity: 0.7"
+        text='color: black; align: left; 
+              width: 2.8; value: Dog: "Hey, What do you have? It smells delicious.";'>
+      </a-entity>
+
+      <!--選択肢-->
+      <a-entity id="choises">
+        <a-entity
+          id="choiseA"  
+          position="-1.2 3 -1.5"
+          geometry="primitive: plane; width: 2; height: 0.8"
+          material="color: #eb6ea5; opacity: 0.7"
+          text="color: black; align: center; 
+                width: 2.8; value: OK! Join me!">
+        </a-entity>
+
+        <a-entity
+          id="choiseB" 
+          position="1.2 3 -1.5"
+          geometry="primitive: plane; width: 2; height: 0.8"
+          material="color: #a0d8ef; opacity: 0.7"
+          text="color: black; align: center; 
+                width: 2.8; value: I'm sorry, I can't give you that.">
+        </a-entity>
+      </a-entity>
+
+      <!--音声認識ボタン-->
+      <a-sphere position="-0.15 1.84 -0.3" color="#a0d8ef" radius="0.05"></a-sphere>
+
+      <!--「次の文章へ」ボタン-->
+      <a-sphere id="nextbtn" position="0.15 1.84 -0.3" color="#e597b2" radius="0.05"
+        animation__click="startEvents: click; easing: easeInSine; property: scale; 
+        dur: 500; from: 1 1 1; to: 0.8 0.8 0.8"
+        animation__mouseleave="startEvents: mouseleave; easing: easeOutSine; property: scale; 
+        delay: 500; from: 0.8 0.8 0.8; to: 1 1 1">
+      </a-sphere>
+    </a-scene>
+    <script type="text/javascript">  
+      const camera = document.getElementById("camera");
+      const next = document.getElementById("nextbtn");
+      camera.addEventListener("fusing", function() {
+        console.log("camera fusing");
+      });
+      camera.addEventListener("click", function() {
+        console.log("camera clicked");
+      });
+      next.addEventListener("click", function() {
+        console.log("nextbtn clicked");
+      });
+    </script>
+  </body>
+</html>
