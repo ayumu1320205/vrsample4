@@ -3,6 +3,6 @@ window.onload = function(){
     const text = document.getElementById("text");
     
     nextbtn.addEventListener("click", function() {
-        location.href = "../scene8-bb.html";
+        location.href = "https://ayumu1320205.github.io/vrsample4/scene8-bb.html";
     });
 };

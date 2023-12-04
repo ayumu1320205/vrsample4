@@ -8,7 +8,7 @@ window.onload = function(){
             text.setAttribute('text', "value: " + lines[linenum] + ";");
             linenum++;
         }else{
-            location.href = "../scene2.html";
+            location.href = "https://ayumu1320205.github.io/vrsample4/scene2.html";
         }
     });
 };

@@ -33,9 +33,9 @@ window.onload = function(){
             text.setAttribute('text', "value: " + lines[linenum] + ";");
             linenum+=2;
         }else if(linenum==6){
-            location.href = "../scene6-aa.html";
+            location.href = "https://ayumu1320205.github.io/vrsample4/scene6-aa.html";
         }else{
-            location.href = "../scene6-ab.html";
+            location.href = "https://ayumu1320205.github.io/vrsample4/scene6-ab.html";
         }
     });
 

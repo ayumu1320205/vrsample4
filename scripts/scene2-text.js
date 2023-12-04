@@ -30,9 +30,9 @@ window.onload = function(){
     choiseA.addEventListener("click", function() {
         if(cflag){
             if(linenum==2){
-                location.href = "../scene4-a.html";
+                location.href = "https://ayumu1320205.github.io/vrsample4/scene4-a.html";
             }else if(linenum==3){
-                location.href = "../scene3-ba.html";
+                location.href = "https://ayumu1320205.github.io/vrsample4/scene3-ba.html";
             }
         }
     });
@@ -45,7 +45,7 @@ window.onload = function(){
                 linenum++;
                 text.setAttribute('text', "value: " + lines[linenum] + ";");
             }else if(linenum==3){
-                location.href = "../scene3-bb.html";
+                location.href = "https://ayumu1320205.github.io/vrsample4/scene3-bb.html";
             }
             
         }

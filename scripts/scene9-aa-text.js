@@ -11,7 +11,7 @@ window.onload = function(){
             text.setAttribute('text', "value: " + lines[linenum] + ";");
             linenum++;
         }else{
-            location.href = "../scene10-aa.html";
+            location.href = "https://ayumu1320205.github.io/vrsample4/scene10-aa.html";
         }
     });
 };
