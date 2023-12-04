@@ -1,4 +1,12 @@
 window.onload = function(){
+    const scene = document.querySelector('a-scene');
+
+    if (scene.hasLoaded) {
+        scene.enterVR();
+    } else {
+        scene.addEventListener('loaded', scene.enterVR());
+    }
+
     const nextbtn = document.getElementById("nextbtn");
     const text = document.getElementById("text");
     let linenum = 0;
