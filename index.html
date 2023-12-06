@@ -7,20 +7,37 @@
     <!--<script src="myrenderer.js"></script>-->
   </head>
   <body>
-    <!--冒頭のシーン-->
     <a-scene  light="defaultLightsEnabled: false">
-      <!--空-->
-      <a-sky color="#eeeeee" id="sky"></a-sky>
-        
-      <!--床-->
-      <a-plane 
-        position="0 0 -6" 
-        rotation="-90 0 0" 
-        width="300" 
-        height="300" 
-        color="#afafaa" 
-        shadow
-      ></a-plane>
+      <a-entity id="scene0">
+        <!--空-->
+        <a-sky color="#eeeeee" id="sky"></a-sky>
+          
+        <!--床-->
+        <a-plane 
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="300" 
+          height="300" 
+          color="#afafaa" 
+          shadow
+        ></a-plane>
+
+        <!--テキスト表示-->
+        <a-entity
+          id="text"
+          position="0 2 -1.5"
+          geometry="primitive: plane; width: 3; height: 0.8"
+          material="color: white; opacity: 0.7"
+          text="color: black; align: left; 
+              width: 2.8; 
+              value: Once upon a time, there lived an old couple and a healthy boy in a small village.;">
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="scene1">
+
+      </a-entity>
+
 
       <!--光-->
       <a-entity
@@ -56,17 +73,6 @@
             from: 0.001 0.001 0.001; to: 0.1 0.1 0.1">
           </a-entity>
         </a-camera>
-      </a-entity>
-
-      <!--テキスト表示-->
-      <a-entity
-        id="text"
-        position="0 2 -1.5"
-        geometry="primitive: plane; width: 3; height: 0.8"
-        material="color: white; opacity: 0.7"
-        text="color: black; align: left; 
-            width: 2.8; 
-            value: Once upon a time, there lived an old couple and a healthy boy in a small village.;">
       </a-entity>
 
       <!--音声認識ボタン-->
