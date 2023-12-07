@@ -1,17 +1,4 @@
 window.onload = function(){
-<<<<<<< Updated upstream
-    /*const scene = document.querySelector('a-scene');
-
-    if (scene.hasLoaded) {
-        scene.enterVR();
-    } else {
-        scene.addEventListener('loaded', function(){
-            scene.enterVR();
-        });
-    }*/
-
-=======
->>>>>>> Stashed changes
     const nextbtn = document.getElementById("nextbtn");
     const text = document.getElementById("text");
 
@@ -67,11 +54,6 @@ window.onload = function(){
     choises.setAttribute("visible", false);
     
     let linenum = 0;
-<<<<<<< Updated upstream
-    const lines = ['His name is Momotaro because he was born from a peach.'];
-
-    
-=======
     const text_scene0 = 'Once upon a time, there lived an old couple and a healthy boy in a small village.';
     const lines_scene0 = ['His name is Momotaro because he was born from a peach.'];
     const text_scene1 = 'At that time, in the village...';
@@ -150,7 +132,6 @@ window.onload = function(){
     ss.text = text_scene0;
     speechSynthesis.speak(ss);
 
->>>>>>> Stashed changes
     nextbtn.addEventListener("click", function() {
         switch(currentScene){
             case "scene0":
