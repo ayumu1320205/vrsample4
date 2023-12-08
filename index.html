@@ -7,66 +7,65 @@
     <!--<script src="myrenderer.js"></script>-->
   </head>
   <body>
-
-    <!--テキスト表示-->
-    <a-entity
-    id="text"
-    position="0 2 -1.5"
-    geometry="primitive: plane; width: 3; height: 0.8"
-    material="color: white; opacity: 0.7"
-    text="color: black; align: left; 
-        width: 2.8; 
-        value: Once upon a time, there lived an old couple and a healthy boy in a small village.;">
-    </a-entity>
-
-    <!--選択肢-->
-    <a-entity id="choises">
-      <a-entity
-        id="choiseA"  
-        position="-1.2 3 -1.5"
-        geometry="primitive: plane; width: 2; height: 0.8"
-        material="color: #eb6ea5; opacity: 0.7"
-        text="color: black; align: center; 
-              width: 2.8; value: I'll train and get stronger.">
-      </a-entity>
-
-      <a-entity
-        id="choiseB" 
-        position="1.2 3 -1.5"
-        geometry="primitive: plane; width: 2; height: 0.8"
-        material="color: #a0d8ef; opacity: 0.7"
-        text="color: black; align: center; 
-              width: 2.8; value: I'm going to school.">
-      </a-entity>
-    </a-entity>
-
-
-    <!--おじいさん、おばあさん読み込み-->
-    <a-assets>
-      <a-asset-item id="oldman_obj" src="models/oldman/oldman.obj"></a-asset-item>
-      <a-asset-item id="oldman_mtl" src="models/oldman/oldman.mtl"></a-asset-item>
-      <a-asset-item id="oldwoman_obj" src="models/oldwoman/oldwoman.obj"></a-asset-item>
-      <a-asset-item id="oldwoman_mtl" src="models/oldwoman/oldwoman.mtl"></a-asset-item>
-    </a-assets>
-
-    <!--木読み込み-->
-    <a-assets>
-      <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-      <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-    </a-assets>
-
-    <!--家読み込み-->
-    <a-assets>
-      <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-      <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-    </a-assets>
-
-
-    <!--冒頭のシーン-->
     <a-scene  light="defaultLightsEnabled: false">
+    <!--テキスト・選択肢-->
+      <!--テキスト表示-->
+      <a-entity
+        id="text"
+        position="0 2 -1.5"
+        geometry="primitive: plane; width: 3; height: 0.8"
+        material="color: white; opacity: 0.7"
+        text="color: black; align: left; 
+            width: 2.8; 
+            value: Once upon a time, there lived an old couple and a healthy boy in a small village.;">
+      </a-entity>
+
+      <!--選択肢-->
+      <a-entity id="choises">
+        <a-entity
+          id="choiseA"  
+          position="-1.2 3 -1.5"
+          geometry="primitive: plane; width: 2; height: 0.8"
+          material="color: #eb6ea5; opacity: 0.7"
+          text="color: black; align: center; 
+                width: 2.8; value: I'll train and get stronger.">
+        </a-entity>
+
+        <a-entity
+          id="choiseB" 
+          position="1.2 3 -1.5"
+          geometry="primitive: plane; width: 2; height: 0.8"
+          material="color: #a0d8ef; opacity: 0.7"
+          text="color: black; align: center; 
+                width: 2.8; value: I'm going to school.">
+        </a-entity>
+      </a-entity>
+
+    <!--3Dモデル読み込み-->
+      <!--おじいさん、おばあさん読み込み-->
+      <a-assets>
+        <a-asset-item id="oldman_obj" src="models/oldman/oldman.obj"></a-asset-item>
+        <a-asset-item id="oldman_mtl" src="models/oldman/oldman.mtl"></a-asset-item>
+        <a-asset-item id="oldwoman_obj" src="models/oldwoman/oldwoman.obj"></a-asset-item>
+        <a-asset-item id="oldwoman_mtl" src="models/oldwoman/oldwoman.mtl"></a-asset-item>
+      </a-assets>
+
+      <!--木読み込み-->
+      <a-assets>
+        <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
+        <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
+      </a-assets>
+
+      <!--家読み込み-->
+      <a-assets>
+        <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
+        <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
+      </a-assets>
+
+    <!--scene0-->
       <a-entity id="scene0">
         <!--空-->
-        <a-sky color="#eeeeee" id="sky"></a-sky>
+        <a-sky color="#eeeeee"></a-sky>
           
         <!--床-->
         <a-plane 
@@ -77,13 +76,12 @@
           color="#afafaa" 
           shadow
         ></a-plane>
+      </a-entity>
   
-        
-        </a-entity>
-  
-        <a-entity id="scene1">
-          <!--空-->
-        <a-sky color="#eeeeee" id="sky"></a-sky>
+    <!--scene1-->
+      <a-entity id="scene1">
+        <!--空-->
+        <a-sky color="#eeeeee"></a-sky>
           
         <!--床-->
         <a-plane 
@@ -94,11 +92,11 @@
           color="#afafaa" 
           shadow
         ></a-plane>
-        
-        </a-entity>
+      </a-entity>
   
-        <a-entity id="scene2">
-          <!--空-->
+    <!--scene2-->
+      <a-entity id="scene2">
+        <!--空-->
         <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
@@ -163,7 +161,6 @@
             shadow
         ></a-box>
         
-        
         <!--配置-->
         <a-obj-model
           src="#oldman_obj"
@@ -177,13 +174,27 @@
           position="-3 3.5 -5"
           rotation="0 30 0"
         ></a-obj-model>
-  
-        
       </a-entity>
   
+    <!--scene3-ba-->
+      <a-entity id="scene3-ba">
+        <!--空-->
+        <a-sky color="#eeeeee"></a-sky>
+          
+        <!--床-->
+        <a-plane 
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="300" 
+          height="300" 
+          color="#afafaa" 
+          shadow
+        ></a-plane>
+      </a-entity>
   
-        <a-entity id="scene3-ba">
-          <!--空-->
+    <!--scene3-bb-->
+      <a-entity id="scene3-bb">
+        <!--空-->
         <a-sky color="#eeeeee" id="sky"></a-sky>
           
         <!--床-->
@@ -195,27 +206,11 @@
           color="#afafaa" 
           shadow
         ></a-plane>
-      
-        </a-entity>
+      </a-entity>  
   
-        <a-entity id="scene3-bb">
-          <!--空-->
-        <a-sky color="#eeeeee" id="sky"></a-sky>
-          
-        <!--床-->
-        <a-plane 
-          position="0 0 -6" 
-          rotation="-90 0 0" 
-          width="300" 
-          height="300" 
-          color="#afafaa" 
-          shadow
-        ></a-plane>
-        
-        </a-entity>  
-  
-        <a-entity id="scene4-a">
-          <!--空-->
+    <!--scene4-a-->
+      <a-entity id="scene4-a">
+        <!--空-->
         <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
@@ -227,283 +222,135 @@
             color="#88cb7f" 
             shadow
         ></a-plane>
-  
-        
-        
-        <!--配置-->
-        <!--家の間の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <!--家の奥の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        </a-entity>  
-  
-        <a-entity id="scene4-ba">
-          <!--空-->
-        <a-sky color="#eeeeee" id="sky"></a-sky>
-          
-        <!--床-->
-        <a-plane 
-          position="0 0 -6" 
-          rotation="-90 0 0" 
-          width="300" 
-          height="300" 
-          color="#afafaa" 
-          shadow
-        ></a-plane>
-        </a-entity> 
-        
-        <a-entity id="scene4-bb">
-          <!--空-->
-        <a-sky color="#eeeeee" id="sky"></a-sky>
-          
-        <!--床-->
-        <a-plane 
-          position="0 0 -6" 
-          rotation="-90 0 0" 
-          width="300" 
-          height="300" 
-          color="#afafaa" 
-          shadow
-        ></a-plane>
-        
-        </a-entity>
-  
-        <a-entity id="scene5-a">
-          <!--空-->
-          <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
-        
-          <!--床-->
-          <a-plane 
-            position="0 0 -6" 
-            rotation="-90 0 0" 
-            width="300" 
-            height="300" 
-            color="#88cb7f" 
-            shadow
-        ></a-plane>
-  
-        
-        
-        <!--配置-->
-        <!--家の間の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <!--家の奥の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
 
+        <!--配置-->
+        <!--家の間の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="6 0 -2"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 -10"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="15 0 -20"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 6"
+          rotation="0 30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 20"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 -40"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 -7"
+          rotation="0 -120 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 2"
+          rotation="0 -180 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-1 0 7"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <!--家の奥の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="25 0 5"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 -20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-25 0 -3"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 -18"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
   
+        <!--配置-->
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-7 0 -15"
+          rotation="0 -30 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="5 0 -60"
+          rotation="0 -120 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+      </a-entity>  
+  
+    <!--scene4-ba-->
+      <a-entity id="scene4-ba">
+        <!--空-->
+        <a-sky color="#eeeeee"></a-sky>
+          
+        <!--床-->
+        <a-plane 
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="300" 
+          height="300" 
+          color="#afafaa" 
+          shadow
+        ></a-plane>
+      </a-entity> 
         
-        </a-entity>
-  
-        <a-entity id="scene5-ba">
-          <!--空-->
+    <!--scene4-bb-->
+      <a-entity id="scene4-bb">
+        <!--空-->
         <a-sky color="#eeeeee" id="sky"></a-sky>
           
         <!--床-->
@@ -515,156 +362,24 @@
           color="#afafaa" 
           shadow
         ></a-plane>
-        
-        </a-entity>
+      </a-entity>
   
-        <a-entity id="scene6-aa">
-          <!--空-->
+    <!--scene5-a-->
+      <a-entity id="scene5-a">
+        <!--空-->
         <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
-        
+      
         <!--床-->
         <a-plane 
-            position="0 0 -6" 
-            rotation="-90 0 0" 
-            width="300" 
-            height="300" 
-            color="#88cb7f" 
-            shadow
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="300" 
+          height="300" 
+          color="#88cb7f" 
+          shadow
         ></a-plane>
   
         
-        
-        <!--配置-->
-        <!--家の間の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <!--家の奥の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        
-        </a-entity>
-  
-        <a-entity id="scene6-ab">
-          <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
-        
-        <!--床-->
-        <a-plane 
-            position="0 0 -6" 
-            rotation="-90 0 0" 
-            width="300" 
-            height="300" 
-            color="#88cb7f" 
-            shadow
-        ></a-plane>
-  
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
         
         <!--配置-->
         <!--家の間の木-->
@@ -773,27 +488,292 @@
           rotation="0 -120 0"
           scale="2.1 2.1 2.1"
         ></a-entity>
-        
-        </a-entity>
+      </a-entity>
   
-        <a-entity id="scene6-ba">
-          <!--空-->
-          <a-sky color="#eeeeee" id="sky"></a-sky>
+    <!--scene5-ba-->
+      <a-entity id="scene5-ba">
+        <!--空-->
+        <a-sky color="#eeeeee"></a-sky>
           
-          <!--床-->
-          <a-plane 
+        <!--床-->
+        <a-plane 
           position="0 0 -6" 
           rotation="-90 0 0" 
           width="300" 
           height="300" 
           color="#afafaa" 
           shadow
-          ></a-plane>
+        ></a-plane>
+      </a-entity>
+  
+    <!--scene6-aa-->
+      <a-entity id="scene6-aa">
+        <!--空-->
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        
+        <!--床-->
+        <a-plane 
+            position="0 0 -6" 
+            rotation="-90 0 0" 
+            width="300" 
+            height="300" 
+            color="#88cb7f" 
+            shadow
+        ></a-plane>
+  
+        <!--配置-->
+        <!--家の間の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="6 0 -2"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 -10"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="15 0 -20"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 6"
+          rotation="0 30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 20"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 -40"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 -7"
+          rotation="0 -120 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 2"
+          rotation="0 -180 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-1 0 7"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <!--家の奥の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="25 0 5"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 -20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-25 0 -3"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 -18"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+  
+        <!--配置-->
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-7 0 -15"
+          rotation="0 -30 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="5 0 -60"
+          rotation="0 -120 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+      </a-entity>
+  
+    <!--scene6-ab-->
+      <a-entity id="scene6-ab">
+        <!--空-->
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        
+        <!--床-->
+        <a-plane 
+            position="0 0 -6" 
+            rotation="-90 0 0" 
+            width="300" 
+            height="300" 
+            color="#88cb7f" 
+            shadow
+        ></a-plane>
+        
+        <!--配置-->
+        <!--家の間の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="6 0 -2"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 -10"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="15 0 -20"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 6"
+          rotation="0 30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 20"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 -40"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 -7"
+          rotation="0 -120 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 2"
+          rotation="0 -180 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-1 0 7"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <!--家の奥の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="25 0 5"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 -20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-25 0 -3"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 -18"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+  
+        <!--配置-->
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-7 0 -15"
+          rotation="0 -30 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="5 0 -60"
+          rotation="0 -120 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+      </a-entity>
+  
+    <!--scene6-ba-->
+      <a-entity id="scene6-ba">
+        <!--空-->
+        <a-sky color="#eeeeee" id="sky"></a-sky>
+        
+        <!--床-->
+        <a-plane 
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="300" 
+          height="300" 
+          color="#afafaa" 
+          shadow
+        ></a-plane>
           
-        </a-entity>
+      </a-entity>
   
-        <a-entity id="scene6-bb">
-          <!--空-->
+    <!--scene6-bb-->
+      <a-entity id="scene6-bb">
+        <!--空-->
         <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
@@ -806,8 +786,6 @@
             shadow
         ></a-plane>
   
-        
-        
         <!--配置-->
         <!--家の間の木-->
         <a-entity
@@ -902,8 +880,6 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        
-  
         <!--配置-->
         <a-entity
           obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
@@ -917,11 +893,11 @@
           rotation="0 -120 0"
           scale="2.1 2.1 2.1"
         ></a-entity>
-        
-        </a-entity>
+      </a-entity>
       
-        <a-entity id="scene7-ab">
-          <!--空-->
+    <!--scene7-ab-->
+      <a-entity id="scene7-ab">
+        <!--空-->
         <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
@@ -1041,11 +1017,11 @@
           rotation="0 -120 0"
           scale="2.1 2.1 2.1"
         ></a-entity>
-        
-        </a-entity>
+      </a-entity>
   
-        <a-entity id="scene7-bb">
-          <!--空-->
+    <!--scene7-bb-->
+      <a-entity id="scene7-bb">
+        <!--空-->
         <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
@@ -1057,7 +1033,6 @@
             color="#88cb7f" 
             shadow
         ></a-plane>
-  
         
         <!--配置-->
         <!--家の間の木-->
@@ -1152,7 +1127,6 @@
           rotation="0 0 0"
           scale="0.3 0.3 0.3"
         ></a-entity>
-  
   
         <!--配置-->
         <a-entity
@@ -1167,11 +1141,11 @@
           rotation="0 -120 0"
           scale="2.1 2.1 2.1"
         ></a-entity>
-        
-        </a-entity>
+      </a-entity>
   
-        <a-entity id="scene8-bb">
-          <!--空-->
+    <!--scene8-bb-->
+      <a-entity id="scene8-bb">
+        <!--空-->
         <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
@@ -1184,6 +1158,129 @@
             shadow
         ></a-plane>
   
+        <!--配置-->
+        <!--家の間の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="6 0 -2"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 -10"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="15 0 -20"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 6"
+          rotation="0 30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 20"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 -40"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 -7"
+          rotation="0 -120 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 2"
+          rotation="0 -180 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-1 0 7"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <!--家の奥の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="25 0 5"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 -20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-25 0 -3"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 -18"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+  
+        <!--配置-->
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-7 0 -15"
+          rotation="0 -30 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="5 0 -60"
+          rotation="0 -120 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+      </a-entity>
+  
+    <!--scene9-aa-->
+      <a-entity id="scene9-aa">
+        <!--空-->
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        
+        <!--床-->
+        <a-plane 
+            position="0 0 -6" 
+            rotation="-90 0 0" 
+            width="300" 
+            height="300" 
+            color="#88cb7f" 
+            shadow
+        ></a-plane>
         
         <!--配置-->
         <!--家の間の木-->
@@ -1279,8 +1376,254 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
+        <!--配置-->
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-7 0 -15"
+          rotation="0 -30 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="5 0 -60"
+          rotation="0 -120 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+      </a-entity>
+  
+    <!--scene10-aa-->
+      <a-entity id="scene10-aa">
+        <!--空-->
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        
+        <!--床-->
+        <a-plane 
+            position="0 0 -6" 
+            rotation="-90 0 0" 
+            width="300" 
+            height="300" 
+            color="#88cb7f" 
+            shadow
+        ></a-plane>
+        
+        <!--配置-->
+        <!--家の間の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="6 0 -2"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 -10"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="15 0 -20"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 6"
+          rotation="0 30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 20"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 -40"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 -7"
+          rotation="0 -120 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 2"
+          rotation="0 -180 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-1 0 7"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <!--家の奥の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="25 0 5"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 -20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-25 0 -3"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 -18"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+  
+        <!--配置-->
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-7 0 -15"
+          rotation="0 -30 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="5 0 -60"
+          rotation="0 -120 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+      </a-entity>
+  
+    <!--scene10-ab-->
+      <a-entity id="scene10-ab">
+        <!--空-->
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        
+        <!--床-->
+        <a-plane 
+            position="0 0 -6" 
+            rotation="-90 0 0" 
+            width="300" 
+            height="300" 
+            color="#88cb7f" 
+            shadow
+        ></a-plane>
+        
+        <!--配置-->
+        <!--家の間の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="6 0 -2"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 -10"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="15 0 -20"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 6"
+          rotation="0 30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 20"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 -40"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 -7"
+          rotation="0 -120 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 2"
+          rotation="0 -180 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-1 0 7"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <!--家の奥の木-->
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="25 0 5"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 -20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-25 0 -3"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 -18"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
       
-  
         <!--配置-->
         <a-entity
           obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
@@ -1294,383 +1637,13 @@
           rotation="0 -120 0"
           scale="2.1 2.1 2.1"
         ></a-entity>
-        
-        </a-entity>
-  
-        <a-entity id="scene9-aa">
-          <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
-        
-        <!--床-->
-        <a-plane 
-            position="0 0 -6" 
-            rotation="-90 0 0" 
-            width="300" 
-            height="300" 
-            color="#88cb7f" 
-            shadow
-        ></a-plane>
-        
-        <!--配置-->
-        <!--家の間の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <!--家の奥の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        
-        </a-entity>
-  
-        <a-entity id="scene10-aa">
-          <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
-        
-        <!--床-->
-        <a-plane 
-            position="0 0 -6" 
-            rotation="-90 0 0" 
-            width="300" 
-            height="300" 
-            color="#88cb7f" 
-            shadow
-        ></a-plane>
-        
-        <!--配置-->
-        <!--家の間の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <!--家の奥の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
+      </a-entity>
 
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        
-        </a-entity>
-  
-        <a-entity id="scene10-ab">
-          <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
-        
-        <!--床-->
-        <a-plane 
-            position="0 0 -6" 
-            rotation="-90 0 0" 
-            width="300" 
-            height="300" 
-            color="#88cb7f" 
-            shadow
-        ></a-plane>
-        
-        <!--配置-->
-        <!--家の間の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <!--家の奥の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-      
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        
-        </a-entity>
+      <a-entity id="scene9-bb"></a-entity>
 
+      <a-entity id="scene10-bb"></a-entity>
+
+    <!--ここから共通-->
       <!--光-->
       <a-entity
         light="
@@ -1707,7 +1680,6 @@
         </a-camera>
       </a-entity>
 
-
       <!--音声認識ボタン-->
       <a-sphere position="-0.15 1.84 -0.3" color="#a0d8ef" radius="0.05"></a-sphere>
 
@@ -1731,15 +1703,6 @@
       next.addEventListener("click", function() {
         console.log("nextbtn clicked");
       });
-
-      var ss = new SpeechSynthesisUtterance();
-      ss.lang = "en-US";
-      ss.volume = 1.0;
-      ss.rate = 1.0;
-      ss.pitch = 1.0;
-
-      ss.text="Once upon a time, there lived an old couple and a healthy boy in a small village.";
-      speechSynthesis.speak(ss);
     </script>
   </body>
 </html>
