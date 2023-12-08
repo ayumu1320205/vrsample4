@@ -7,6 +7,61 @@
     <!--<script src="myrenderer.js"></script>-->
   </head>
   <body>
+
+    <!--テキスト表示-->
+    <a-entity
+    id="text"
+    position="0 2 -1.5"
+    geometry="primitive: plane; width: 3; height: 0.8"
+    material="color: white; opacity: 0.7"
+    text="color: black; align: left; 
+        width: 2.8; 
+        value: Once upon a time, there lived an old couple and a healthy boy in a small village.;">
+    </a-entity>
+
+    <!--選択肢-->
+    <a-entity id="choises">
+      <a-entity
+        id="choiseA"  
+        position="-1.2 3 -1.5"
+        geometry="primitive: plane; width: 2; height: 0.8"
+        material="color: #eb6ea5; opacity: 0.7"
+        text="color: black; align: center; 
+              width: 2.8; value: I'll train and get stronger.">
+      </a-entity>
+
+      <a-entity
+        id="choiseB" 
+        position="1.2 3 -1.5"
+        geometry="primitive: plane; width: 2; height: 0.8"
+        material="color: #a0d8ef; opacity: 0.7"
+        text="color: black; align: center; 
+              width: 2.8; value: I'm going to school.">
+      </a-entity>
+    </a-entity>
+
+
+    <!--おじいさん、おばあさん読み込み-->
+    <a-assets>
+      <a-asset-item id="oldman_obj" src="models/oldman/oldman.obj"></a-asset-item>
+      <a-asset-item id="oldman_mtl" src="models/oldman/oldman.mtl"></a-asset-item>
+      <a-asset-item id="oldwoman_obj" src="models/oldwoman/oldwoman.obj"></a-asset-item>
+      <a-asset-item id="oldwoman_mtl" src="models/oldwoman/oldwoman.mtl"></a-asset-item>
+    </a-assets>
+
+    <!--木読み込み-->
+    <a-assets>
+      <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
+      <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
+    </a-assets>
+
+    <!--家読み込み-->
+    <a-assets>
+      <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
+      <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
+    </a-assets>
+
+
     <!--冒頭のシーン-->
     <a-scene  light="defaultLightsEnabled: false">
       <a-entity id="scene0">
@@ -23,16 +78,7 @@
           shadow
         ></a-plane>
   
-        <!--テキスト表示-->
-        <a-entity
-          id="text"
-          position="0 2 -1.5"
-          geometry="primitive: plane; width: 3; height: 0.8"
-          material="color: white; opacity: 0.7"
-          text="color: black; align: left; 
-              width: 2.8; 
-              value: Once upon a time, there lived an old couple and a healthy boy in a small village.;">
-        </a-entity>
+        
         </a-entity>
   
         <a-entity id="scene1">
@@ -116,13 +162,7 @@
             color="wheat" 
             shadow
         ></a-box>
-        <!--おじいさん、おばあさん読み込み-->
-        <a-assets>
-          <a-asset-item id="oldman_obj" src="models/oldman/oldman.obj"></a-asset-item>
-          <a-asset-item id="oldman_mtl" src="models/oldman/oldman.mtl"></a-asset-item>
-          <a-asset-item id="oldwoman_obj" src="models/oldwoman/oldwoman.obj"></a-asset-item>
-          <a-asset-item id="oldwoman_mtl" src="models/oldwoman/oldwoman.mtl"></a-asset-item>
-        </a-assets>
+        
         
         <!--配置-->
         <a-obj-model
@@ -138,26 +178,7 @@
           rotation="0 30 0"
         ></a-obj-model>
   
-        <!--選択肢-->
-        <a-entity id="choises">
-          <a-entity
-            id="choiseA"  
-            position="-1.2 3 -1.5"
-            geometry="primitive: plane; width: 2; height: 0.8"
-            material="color: #eb6ea5; opacity: 0.7"
-            text="color: black; align: center; 
-                  width: 2.8; value: I'll train and get stronger.">
-          </a-entity>
-  
-          <a-entity
-            id="choiseB" 
-            position="1.2 3 -1.5"
-            geometry="primitive: plane; width: 2; height: 0.8"
-            material="color: #a0d8ef; opacity: 0.7"
-            text="color: black; align: center; 
-                  width: 2.8; value: I'm going to school.">
-          </a-entity>
-        </a-entity>
+        
       </a-entity>
   
   
@@ -207,11 +228,7 @@
             shadow
         ></a-plane>
   
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
+        
         
         <!--配置-->
         <!--家の間の木-->
@@ -307,11 +324,7 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
+        
   
         <!--配置-->
         <a-entity
@@ -373,11 +386,7 @@
             shadow
         ></a-plane>
   
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
+        
         
         <!--配置-->
         <!--家の間の木-->
@@ -473,11 +482,7 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
+        
   
         <!--配置-->
         <a-entity
@@ -494,26 +499,7 @@
         ></a-entity>
 
   
-        <!--選択肢-->
-        <a-entity id="choises">
-          <a-entity
-            id="choiseA"  
-            position="-1.2 3 -1.5"
-            geometry="primitive: plane; width: 2; height: 0.8"
-            material="color: #eb6ea5; opacity: 0.7"
-            text="color: black; align: center; 
-                  width: 2.8; value: OK! Join me!">
-          </a-entity>
-  
-          <a-entity
-            id="choiseB" 
-            position="1.2 3 -1.5"
-            geometry="primitive: plane; width: 2; height: 0.8"
-            material="color: #a0d8ef; opacity: 0.7"
-            text="color: black; align: center; 
-                  width: 2.8; value: I'm sorry, I can't give you that.">
-          </a-entity>
-        </a-entity>
+        
         </a-entity>
   
         <a-entity id="scene5-ba">
@@ -546,11 +532,7 @@
             shadow
         ></a-plane>
   
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
+        
         
         <!--配置-->
         <!--家の間の木-->
@@ -646,11 +628,7 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
+        
   
         <!--配置-->
         <a-entity
@@ -782,12 +760,6 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
-  
         <!--配置-->
         <a-entity
           obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
@@ -834,11 +806,7 @@
             shadow
         ></a-plane>
   
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
+        
         
         <!--配置-->
         <!--家の間の木-->
@@ -934,11 +902,7 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
+        
   
         <!--配置-->
         <a-entity
@@ -969,12 +933,6 @@
             color="#88cb7f" 
             shadow
         ></a-plane>
-  
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
         
         <!--配置-->
         <!--家の間の木-->
@@ -1069,12 +1027,6 @@
           rotation="0 0 0"
           scale="0.3 0.3 0.3"
         ></a-entity>
-  
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
   
         <!--配置-->
         <a-entity
@@ -1106,11 +1058,6 @@
             shadow
         ></a-plane>
   
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
         
         <!--配置-->
         <!--家の間の木-->
@@ -1206,11 +1153,6 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
   
         <!--配置-->
         <a-entity
@@ -1242,11 +1184,6 @@
             shadow
         ></a-plane>
   
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
         
         <!--配置-->
         <!--家の間の木-->
@@ -1342,11 +1279,7 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
+      
   
         <!--配置-->
         <a-entity
@@ -1377,12 +1310,6 @@
             color="#88cb7f" 
             shadow
         ></a-plane>
-  
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
         
         <!--配置-->
         <!--家の間の木-->
@@ -1477,12 +1404,6 @@
           rotation="0 0 0"
           scale="0.3 0.3 0.3"
         ></a-entity>
-  
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
   
         <!--配置-->
         <a-entity
@@ -1513,12 +1434,6 @@
             color="#88cb7f" 
             shadow
         ></a-plane>
-  
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
         
         <!--配置-->
         <!--家の間の木-->
@@ -1613,12 +1528,7 @@
           rotation="0 0 0"
           scale="0.3 0.3 0.3"
         ></a-entity>
-  
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
+
   
         <!--配置-->
         <a-entity
@@ -1649,12 +1559,6 @@
             color="#88cb7f" 
             shadow
         ></a-plane>
-  
-        <!--木読み込み-->
-        <a-assets>
-          <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
-          <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
-        </a-assets>
         
         <!--配置-->
         <!--家の間の木-->
@@ -1750,12 +1654,7 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
   
-        <!--家読み込み-->
-        <a-assets>
-          <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
-          <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
-        </a-assets>
-  
+      
         <!--配置-->
         <a-entity
           obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
