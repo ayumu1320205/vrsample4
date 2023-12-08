@@ -1,6 +1,7 @@
 window.onload = function(){
-    const nextbtn = document.getElementById("nextbtn");
-    const text = document.getElementById("text");
+    const nextbtn = document.querySelector("#nextbtn");
+    const micbtn = document.querySelector("#micbtn");
+    const text = document.querySelector("#text");
 
     let currentScene = "scene0";
 
@@ -27,8 +28,9 @@ window.onload = function(){
     const scene10_ab = document.querySelector("#scene10-ab");
     const scene10_bb = document.querySelector("#scene10-bb");
     const choises = document.querySelector("#choises");
-    const choiseA = document.getElementById("choiseA");
-    const choiseB = document.getElementById("choiseB");
+    const choiseA = document.querySelector("#choiseA");
+    const choiseB = document.querySelector("#choiseB");
+    const result = document.querySelector("#result");
 
     scene1.setAttribute("visible", false);
     scene2.setAttribute("visible", false);
@@ -52,6 +54,8 @@ window.onload = function(){
     scene10_ab.setAttribute("visible", false);
     scene10_bb.setAttribute("visible", false);
     choises.setAttribute("visible", false);
+    result.setAttribute("visible", false);
+    micbtn.setAttribute("visible", false);
     
     let linenum = 0;
     const text_scene0 = 'Once upon a time, there lived an old couple and a healthy boy in a small village.';
@@ -131,6 +135,14 @@ window.onload = function(){
 
     ss.text = text_scene0;
     speechSynthesis.speak(ss);
+
+    let rec = new webkitSpeechRecognition();
+    rec.continuous = true;
+    rec.interimResults = false;
+    rec.lang = 'en-US';
+    
+    let stopped = true;
+
 
     nextbtn.addEventListener("click", function() {
         switch(currentScene){
@@ -221,6 +233,8 @@ window.onload = function(){
                     ss.text=lines_scene2[linenum];
                     speechSynthesis.speak(ss);
                     choises.setAttribute("visible", true);
+                    micbtn.setAttribute("visible", true);
+                    nextbtn.setAttribute("visible", false);
                 }
                 break;
             case "scene3_ba":
@@ -390,6 +404,9 @@ window.onload = function(){
                     speechSynthesis.speak(ss);
 
                     choises.setAttribute("visible", true);
+                    micbtn.setAttribute("visible", true);
+                    nextbtn.setAttribute("visible", false);
+
                 }else if(linenum==3){
                     text.setAttribute('text', "value: " + lines_scene5_a[linenum] + ";");
                     var ss = new SpeechSynthesisUtterance();
@@ -776,6 +793,10 @@ window.onload = function(){
                         choises.setAttribute("visible", false);
                         choiseA.setAttribute('text', "value: OK! Join me!");
                         choiseB.setAttribute('text', "value: I'm sorry, I can't give you that.");
+                        result.setAttribute("visible", false);
+                        result.setAttribute('text', "value: recognizing...");
+                        micbtn.setAttribute("visible", false);
+                        nextbtn.setAttribute("visible", true);
                         
                         text.setAttribute('text', "value: " + text_scene4_a + ";");
                         var ss = new SpeechSynthesisUtterance();
@@ -794,6 +815,10 @@ window.onload = function(){
                         scene2.setAttribute("visible", false);
                         scene3_ba.setAttribute("visible", true);
                         choises.setAttribute("visible", false);
+                        result.setAttribute("visible", false);
+                        result.setAttribute('text', "value: recognizing...");
+                        micbtn.setAttribute("visible", false);
+                        nextbtn.setAttribute("visible", true);
                         
                         text.setAttribute('text', "value: " + text_scene3_ba + ";");
                         var ss = new SpeechSynthesisUtterance();
@@ -813,6 +838,11 @@ window.onload = function(){
                 case "scene5_a":
                     if(linenum==1){
                         choises.setAttribute("visible", false);
+                        result.setAttribute("visible", false);
+                        result.setAttribute('text', "value: recognizing...");
+                        micbtn.setAttribute("visible", false);
+                        nextbtn.setAttribute("visible", true);
+
                         cflag = false;
                         linenum++;
                         text.setAttribute('text', "value: " + lines_scene5_a[linenum] + ";");
@@ -839,6 +869,8 @@ window.onload = function(){
                     if(linenum==2){
                         choiseA.setAttribute('text', "value: I'll make friends there!");
                         choiseB.setAttribute('text', "value: I will learn hard!");
+                        result.setAttribute("visible", false);
+                        result.setAttribute('text', "value: recognizing...");
                         
                         linenum++;
                         text.setAttribute('text', "value: " + lines_scene2[linenum] + ";");
@@ -855,6 +887,10 @@ window.onload = function(){
                         scene2.setAttribute("visible", false);
                         scene3_bb.setAttribute("visible", true);
                         choises.setAttribute("visible", false);
+                        result.setAttribute("visible", false);
+                        result.setAttribute('text', "value: recognizing...");
+                        micbtn.setAttribute("visible", false);
+                        nextbtn.setAttribute("visible", true);
                         
                         text.setAttribute('text', "value: " + text_scene3_bb + ";");
                         var ss = new SpeechSynthesisUtterance();
@@ -874,6 +910,11 @@ window.onload = function(){
                 case "scene5_a":
                     if(linenum==1){
                         choises.setAttribute("visible", false);
+                        result.setAttribute("visible", false);
+                        result.setAttribute('text', "value: recognizing...");
+                        micbtn.setAttribute("visible", false);
+                        nextbtn.setAttribute("visible", true);
+
                         cflag = false;
                         linenum+=3;
                         text.setAttribute('text', "value: " + lines_scene5_a[linenum] + ";");
@@ -892,4 +933,214 @@ window.onload = function(){
             }
         }
     });
+
+    micbtn.addEventListener("click", function() {
+        if(cflag){
+            switch(currentScene){
+                case "scene2":
+                    if(linenum==2 || linenum==3){
+                        if (stopped == true) {
+                            result.setAttribute("visible", true);
+                            rec.start();
+                        } else {
+                            rec.stop();
+                        }
+                    }
+                    break;
+                case "scene5_a":
+                    if(linenum==1){
+                        if (stopped == true) {
+                            result.setAttribute("visible", true);
+                            rec.start();
+                        } else {
+                            rec.stop();
+                        }
+                    }
+                    break;
+            }
+        }
+    });
+
+    rec.onstart = function () { 
+        console.log('on start');
+        micbtn.setAttribute('text', "value: micOFF;");
+    };
+    
+    rec.onend = function () { 
+        console.log('on end');
+        micbtn.setAttribute('text', "value: micON;");
+    };
+    
+
+    rec.onresult = function (e) {
+        rec.stop();
+        for (let i = e.resultIndex; i < e.results.length; i++) {
+            if(e.results[i].isFinal){
+                console.log(e);
+                let resulttext = e.results[i][0].transcript;
+                console.log(resulttext);
+
+                if(cflag){
+                    switch(currentScene){
+                        case "scene2":
+                            if(linenum==2){
+                                let regexpA =  /train.*get stronger/;
+                                let regexpB = /going.*school/;
+                                if(regexpA.test(resulttext)){
+                                    scene2.setAttribute("visible", false);
+                                    scene4_a.setAttribute("visible", true);
+                                    choises.setAttribute("visible", false);
+                                    choiseA.setAttribute('text', "value: OK! Join me!");
+                                    choiseB.setAttribute('text', "value: I'm sorry, I can't give you that.");
+                                    result.setAttribute("visible", false);
+                                    result.setAttribute('text', "value: recognizing...");
+                                    micbtn.setAttribute("visible", false);
+                                    nextbtn.setAttribute("visible", true);
+                                    
+                                    text.setAttribute('text', "value: " + text_scene4_a + ";");
+                                    var ss = new SpeechSynthesisUtterance();
+                                    ss.lang = "en-US";
+                                    ss.volume = 1.0;
+                                    ss.rate = 1.0;
+                                    ss.pitch = 1.0;
+
+                                    ss.text=text_scene4_a;
+                                    speechSynthesis.speak(ss);
+
+                                    linenum=0;
+                                    currentScene="scene4_a";
+                                    cflag=false;
+
+                                }else if(regexpB.test(resulttext)){
+                                    choiseA.setAttribute('text', "value: I'll make friends there!");
+                                    choiseB.setAttribute('text', "value: I will learn hard!");
+                                    result.setAttribute("visible", false);
+                                    result.setAttribute('text', "value: recognizing...");
+
+                                    linenum++;
+                                    text.setAttribute('text', "value: " + lines_scene2[linenum] + ";");
+                                    var ss = new SpeechSynthesisUtterance();
+                                    ss.lang = "en-US";
+                                    ss.volume = 1.0;
+                                    ss.rate = 1.0;
+                                    ss.pitch = 1.0;
+
+                                    ss.text=lines_scene2[linenum];
+                                    speechSynthesis.speak(ss);
+
+                                }else{
+                                    result.setAttribute('text', "value: Could you say that again?;");
+                                }
+                            }else if(linenum==3){
+                                let regexpA_A =  /make friends/;
+                                let regexpA_B = /learn hard/;
+                                if(regexpA_A.test(resulttext)){
+                                    scene2.setAttribute("visible", false);
+                                    scene3_ba.setAttribute("visible", true);
+                                    choises.setAttribute("visible", false);
+                                    result.setAttribute("visible", false);
+                                    result.setAttribute('text', "value: recognizing...");
+                                    micbtn.setAttribute("visible", false);
+                                    nextbtn.setAttribute("visible", true);
+                                    
+                                    text.setAttribute('text', "value: " + text_scene3_ba + ";");
+                                    var ss = new SpeechSynthesisUtterance();
+                                    ss.lang = "en-US";
+                                    ss.volume = 1.0;
+                                    ss.rate = 1.0;
+                                    ss.pitch = 1.0;
+
+                                    ss.text=text_scene3_ba;
+                                    speechSynthesis.speak(ss);
+
+                                    linenum=0;
+                                    currentScene="scene3_ba";
+                                    cflag=false;
+
+                                }else if(regexpA_B.test(resulttext)){
+                                    scene2.setAttribute("visible", false);
+                                    scene3_bb.setAttribute("visible", true);
+                                    choises.setAttribute("visible", false);
+                                    result.setAttribute("visible", false);
+                                    result.setAttribute('text', "value: recognizing...");
+                                    micbtn.setAttribute("visible", false);
+                                    nextbtn.setAttribute("visible", true);
+                                    
+                                    text.setAttribute('text', "value: " + text_scene3_bb + ";");
+                                    var ss = new SpeechSynthesisUtterance();
+                                    ss.lang = "en-US";
+                                    ss.volume = 1.0;
+                                    ss.rate = 1.0;
+                                    ss.pitch = 1.0;
+
+                                    ss.text=text_scene3_bb;
+                                    speechSynthesis.speak(ss);
+
+                                    linenum=0;
+                                    currentScene="scene3_bb";
+                                    cflag=false;
+
+                                }else{
+                                    result.setAttribute('text', "value: Could you say that again?;");
+                                }
+                            }
+                            break;
+                        case "scene5_a":
+                            if(linenum==1){
+                                let regexp5a_A =  /OK.*oin me/;
+                                let regexp5a_B = /sorry.*can't give you/;
+                                if(regexp5a_A.test(resulttext)){
+                                    choises.setAttribute("visible", false);
+                                    result.setAttribute("visible", false);
+                                    result.setAttribute('text', "value: recognizing...");
+                                    micbtn.setAttribute("visible", false);
+                                    nextbtn.setAttribute("visible", true);
+
+                                    cflag = false;
+                                    linenum++;
+                                    text.setAttribute('text', "value: " + lines_scene5_a[linenum] + ";");
+                                    var ss = new SpeechSynthesisUtterance();
+                                    ss.lang = "en-US";
+                                    ss.volume = 1.0;
+                                    ss.rate = 1.0;
+                                    ss.pitch = 1.0;
+
+                                    ss.text=lines_scene5_a[linenum];
+                                    speechSynthesis.speak(ss);
+
+                                    linenum++;
+
+                                }else if(regexp5a_B.test(resulttext)){
+                                    choises.setAttribute("visible", false);
+                                    result.setAttribute("visible", false);
+                                    result.setAttribute('text', "value: recognizing...");
+                                    micbtn.setAttribute("visible", false);
+                                    nextbtn.setAttribute("visible", true);
+
+                                    cflag = false;
+                                    linenum+=3;
+                                    text.setAttribute('text', "value: " + lines_scene5_a[linenum] + ";");
+                                    var ss = new SpeechSynthesisUtterance();
+                                    ss.lang = "en-US";
+                                    ss.volume = 1.0;
+                                    ss.rate = 1.0;
+                                    ss.pitch = 1.0;
+
+                                    ss.text=lines_scene5_a[linenum];
+                                    speechSynthesis.speak(ss);
+
+                                    linenum++;
+
+                                }else{
+                                    result.setAttribute('text', "value: Could you say that again?;");
+                                }
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+    }
+    
+
 };

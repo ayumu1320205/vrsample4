@@ -12,7 +12,7 @@
       <!--テキスト表示-->
       <a-entity
         id="text"
-        position="0 2 -1.5"
+        position="0 1 -1.5"
         geometry="primitive: plane; width: 3; height: 0.8"
         material="color: white; opacity: 0.7"
         text="color: black; align: left; 
@@ -1681,19 +1681,49 @@
       </a-entity>
 
       <!--音声認識ボタン-->
-      <a-sphere position="-0.15 1.84 -0.3" color="#a0d8ef" radius="0.05"></a-sphere>
-
-      <!--「次の文章へ」ボタン-->
-      <a-sphere id="nextbtn" position="0.15 1.84 -0.3" color="#e597b2" radius="0.05"
+      <a-entity
+        id="micbtn"
+        position="-1 2 -1.5"
+        geometry="primitive: plane; width: 1; height: 0.3"
+        material="color: white; opacity: 0.7"
+        text="color: black; align: center; 
+            width: 2; 
+            value: micON;"
         animation__click="startEvents: click; easing: easeInSine; property: scale; 
         dur: 500; from: 1 1 1; to: 0.8 0.8 0.8"
         animation__mouseleave="startEvents: mouseleave; easing: easeOutSine; property: scale; 
         delay: 500; from: 0.8 0.8 0.8; to: 1 1 1">
-      </a-sphere>
+      </a-entity>
+
+      <!--「次の文章へ」ボタン-->
+      <a-entity
+        id="nextbtn"
+        position="1 2 -1.5"
+        geometry="primitive: plane; width: 1; height: 0.3"
+        material="color: white; opacity: 0.7"
+        text="color: black; align: center; 
+            width: 2; 
+            value: next;"
+        animation__click="startEvents: click; easing: easeInSine; property: scale; 
+        dur: 500; from: 1 1 1; to: 0.8 0.8 0.8"
+        animation__mouseleave="startEvents: mouseleave; easing: easeOutSine; property: scale; 
+        delay: 500; from: 0.8 0.8 0.8; to: 1 1 1">
+      </a-entity>
+
+      <!--音声認識の結果表示-->
+      <a-entity
+        id="result"
+        position="0 2.5 -1.5"
+        geometry="primitive: plane; width: 2; height: 0.5"
+        material="color: white; opacity: 0.7"
+        text="color: black; align: center; 
+            width: 3; 
+            value: recognizing...;">
+      </a-entity>
     </a-scene>
     <script type="text/javascript">  
       const camera = document.getElementById("camera");
-      const next = document.getElementById("nextbtn");
+      const next = document.querySelector("#nextbtn");
       camera.addEventListener("fusing", function() {
         console.log("camera fusing");
       });
