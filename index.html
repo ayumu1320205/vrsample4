@@ -15,9 +15,9 @@
         position="0 1 -1.5"
         geometry="primitive: plane; width: 3; height: 0.8"
         material="color: white; opacity: 0.7"
-        text="color: black; align: left; 
+        text="color: black; align: center; 
             width: 2.8; 
-            value: Once upon a time, there lived an old couple and a healthy boy in a small village.;">
+            value: Momotaro;">
       </a-entity>
 
       <!--選択肢-->
@@ -1680,7 +1680,7 @@
         </a-camera>
       </a-entity>
 
-      <!--音声認識ボタン-->
+      <!--音声認識ボタン
       <a-entity
         id="micbtn"
         position="-1 2 -1.5"
@@ -1694,6 +1694,7 @@
         animation__mouseleave="startEvents: mouseleave; easing: easeOutSine; property: scale; 
         delay: 500; from: 0.8 0.8 0.8; to: 1 1 1">
       </a-entity>
+      -->
 
       <!--「次の文章へ」ボタン-->
       <a-entity
@@ -1710,7 +1711,7 @@
         delay: 500; from: 0.8 0.8 0.8; to: 1 1 1">
       </a-entity>
 
-      <!--音声認識の結果表示-->
+      <!--音声認識の結果表示
       <a-entity
         id="result"
         position="0 2.5 -1.5"
@@ -1720,6 +1721,7 @@
             width: 3; 
             value: recognizing...;">
       </a-entity>
+      -->
     </a-scene>
     <script type="text/javascript">  
       const camera = document.getElementById("camera");
