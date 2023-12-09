@@ -61,6 +61,7 @@ window.onload = function(){
     //const text_scene0 = 'Once upon a time, there lived an old couple and a healthy boy in a small village.';
     const lines_scene0 = ['Once upon a time, there lived an old couple and a healthy boy in a small village.',
                           'His name is Momotaro because he was born from a peach.'];
+
     const voices_scene0 = [new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene0_0.mp3'), 
                            new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene0_1.mp3')];
     
@@ -77,6 +78,7 @@ window.onload = function(){
                           'Momotaro: "I will defeat the ogres."', 
                           'Grandma: "How do you kill ogres?"', 
                           'Momotaro: "What will I do at school?"'];
+
     const voices_scene2 = [new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene2_0.mp3'),
                            new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene2_1.mp3'),
                            new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene2_2.mp3'),
@@ -88,6 +90,7 @@ window.onload = function(){
     const lines_scene3_ba = ['Pheasant: "Momotaro, we want to help you defend the ogres too."', 
                             'Momotaro: "Really? Thank you!"', 
                             'Momotaro developed a strong bond with them through this school life.'];
+
     const voices_scene3_ba = [new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene3_ba_0.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene3_ba_1.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene3_ba_2.mp3')];
@@ -107,6 +110,7 @@ window.onload = function(){
                             'Momotaro: "Thank you!"', 
                             'Grandpa, Grandma: "Be careful!"', 
                             'Momotaro: "I\'m going!"'];
+
     const voices_scene4_a = [new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_0.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_1.mp3'),
                             new Audio('voihttps://ayumu1320205.github.io/vrsample4/ces/lines_scene4_a_2.mp3'),
@@ -134,6 +138,7 @@ window.onload = function(){
                             'The dog, the monkey and the pheasant became Momotaro\'s companions.', 
                             'Dog, Monkey, Pheasant: "That\'s too bad."', 
                             'They left sadly.'];
+
     const voices_scene5_a = [new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene5_a_0.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene5_a_1.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene5_a_2.mp3'),
@@ -155,6 +160,7 @@ window.onload = function(){
     const lines_scene6_aa = ['Ogres: "Why did you come?"', 
                              'Momotaro: "We came to subdue you!"', 
                              'The pheasant pecked at ogre\'s heads, the monkey scratched their faces, the dog bit them on the leg, and Momotaro swung his sword at them.'];
+
     const voices_scene6_aa = [new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene6_aa_0.mp3'),
                              new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene6_aa_1.mp3'),
                              new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene6_aa_2.mp3')];
@@ -174,6 +180,7 @@ window.onload = function(){
                              'Momotaro: "We came to subdue you!"', 
                              'The pheasant pecked at ogre\'s heads, the monkey scratched their faces, the dog bit them on the leg, and Momotaro swung his sword at them.', 
                              'They toyed with the ogres with their wonderful cooperation play.'];
+
     const voices_scene6_ba = [new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene6_ba_0.mp3'),
                              new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene6_ba_1.mp3'),
                              new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene6_ba_2.mp3'),
@@ -220,11 +227,13 @@ window.onload = function(){
     const lines_scene10_aa = ['THE END'];
     
     const text_scene10_ab = 'Momotaro regretted that he had given the animals millet dumplings at that time.';
+
     const vo_scene10_ab = new Audio('https://ayumu1320205.github.io/vrsample4/voices/text_scene10_ab.mp3');
     
     const lines_scene10_ab = ['BAD END...'];
     
     const text_scene10_bb = 'Momotaro filled treasure and returned home, where they lived happily ever after.';
+
     const vo_scene10_bb = new Audio('https://ayumu1320205.github.io/vrsample4/voices/text_scene10_bb.mp3');
     
     const lines_scene10_bb = ['THE END'];
