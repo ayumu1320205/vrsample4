@@ -109,7 +109,7 @@ window.onload = function(){
                             'Momotaro: "I\'m going!"'];
     const voices_scene4_a = [new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_0.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_1.mp3'),
-                            new Audio('voihttps://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_2.mp3'),
+                            new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_2.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_3.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_4.mp3'),
                             new Audio('https://ayumu1320205.github.io/vrsample4/voices/lines_scene4_a_5.mp3')];
