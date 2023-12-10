@@ -42,18 +42,26 @@
       </a-entity>
 
     <!--3Dモデル読み込み-->
-      <!--おじいさん、おばあさん読み込み-->
+      <!--人読み込み-->
       <a-assets>
         <a-asset-item id="oldman_obj" src="models/oldman/oldman.obj"></a-asset-item>
         <a-asset-item id="oldman_mtl" src="models/oldman/oldman.mtl"></a-asset-item>
         <a-asset-item id="oldwoman_obj" src="models/oldwoman/oldwoman.obj"></a-asset-item>
         <a-asset-item id="oldwoman_mtl" src="models/oldwoman/oldwoman.mtl"></a-asset-item>
+        <a-asset-item id="boy_obj" src="models/human/boy.obj"></a-asset-item>
+        <a-asset-item id="boy_mtl" src="models/human/boy.mtl"></a-asset-item>
+        <a-asset-item id="girl_obj" src="models/human/girl.obj"></a-asset-item>
+        <a-asset-item id="girl_mtl" src="models/human/girl.mtl"></a-asset-item>
+        <a-asset-item id="teacher_obj" src="models/human/teacher.obj"></a-asset-item>
+        <a-asset-item id="teacher_mtl" src="models/human/teacher.mtl"></a-asset-item>
       </a-assets>
 
       <!--木読み込み-->
       <a-assets>
         <a-asset-item id="tree_obj" src="models/tree/tree.obj"></a-asset-item>
         <a-asset-item id="tree_mtl" src="models/tree/tree.mtl"></a-asset-item>
+        <a-asset-item id="kareki_obj" src="models/tree/kareki4.obj"></a-asset-item>
+        <a-asset-item id="kareki_mtl" src="models/tree/kareki4.mtl"></a-asset-item>
       </a-assets>
 
       <!--家読み込み-->
@@ -61,6 +69,53 @@
         <a-asset-item id="woodhouse_obj" src="models/WoodHouse/WoodHouse.obj"></a-asset-item>
         <a-asset-item id="woodhouse_mtl" src="models/WoodHouse/WoodHouse.mtl"></a-asset-item>
       </a-assets>
+
+      <!--動物読み込み-->
+      <a-assets>
+        <a-asset-item id="dog_obj" src="models/dog/dog.obj"></a-asset-item>
+        <a-asset-item id="dog_mtl" src="models/dog/dog.mtl"></a-asset-item>
+        <a-asset-item id="monkey_obj" src="models/monkey/monkey.obj"></a-asset-item>
+        <a-asset-item id="monkey_mtl" src="models/monkey/monkey.mtl"></a-asset-item>
+        <a-asset-item id="bird_obj" src="models/bird/pheasant.obj"></a-asset-item>
+        <a-asset-item id="bird_mtl" src="models/bird/pheasant.mtl"></a-asset-item>
+      </a-assets>
+
+      <!--机読み込み-->
+      <a-assets>
+        <a-asset-item id="desk_obj" src="models/desk/school_desk2.obj"></a-asset-item>
+        <a-asset-item id="desk_mtl" src="models/desk/school_desk2.mtl"></a-asset-item>
+        <a-asset-item id="kokuban_obj" src="models/kokuban/kokuban.obj"></a-asset-item>
+        <a-asset-item id="kokuban_mtl" src="models/kokuban/kokuban.mtl"></a-asset-item>
+      </a-assets>
+
+      <!--鬼読み込み-->
+      <a-assets>
+        <a-asset-item id="oni_obj" src="models/oni/oni.obj"></a-asset-item>
+        <a-asset-item id="oni_mtl" src="models/oni/oni.mtl"></a-asset-item>
+        <a-asset-item id="nakuoni_obj" src="models/oni/naku_oni.obj"></a-asset-item>
+        <a-asset-item id="nakuoni_mtl" src="models/oni/naku_oni.mtl"></a-asset-item>
+      </a-assets>
+
+      <!--岩読み込み-->
+      <a-assets>
+        <a-asset-item id="rock_obj" src="models/rock/rock2.obj"></a-asset-item>
+        <a-asset-item id="rock_mtl" src="models/rock/rock2.mtl"></a-asset-item>
+      </a-assets>
+
+      <!--宝読み込み-->
+      <a-assets>
+        <a-asset-item id="takara_obj" src="models/takara/takara.obj"></a-asset-item>
+        <a-asset-item id="takara_mtl" src="models/takara/takara.mtl"></a-asset-item>
+      </a-assets>
+
+      <!--薬読み込み-->
+      <a-assets>
+        <a-asset-item id="poison_obj" src="models/poison/poison2.obj"></a-asset-item>
+        <a-asset-item id="poison_mtl" src="models/poison/poison2.mtl"></a-asset-item>
+        <a-asset-item id="taoretapo_obj" src="models/poison/poison_1.obj"></a-asset-item>
+        <a-asset-item id="taoretapo_mtl" src="models/poison/poison_1.mtl"></a-asset-item>
+      </a-assets>
+      
 
     <!--scene0-->
       <a-entity id="scene0">
@@ -81,7 +136,7 @@
     <!--scene1-->
       <a-entity id="scene1">
         <!--空-->
-        <a-sky color="#eeeeee"></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:steelblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
           
         <!--床-->
         <a-plane 
@@ -89,10 +144,170 @@
           rotation="-90 0 0" 
           width="300" 
           height="300" 
-          color="#afafaa" 
+          color="#88cb7f"  
           shadow
         ></a-plane>
-      </a-entity>
+
+        <!--鬼配置-->
+        <a-entity
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-3.5 1.5 -8"
+          rotation="0 0 0"
+          scale="0.8 0.8 0.8"
+        ></a-entity>
+
+    <!--宝配置-->
+    <a-entity
+      obj-model="obj: #takara_obj; mtl: #takara_mtl"
+      position="1 0 -5"
+      rotation="270 -40 180"
+      scale="0.06 0.06 0.06"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #takara_obj; mtl: #takara_mtl"
+      position="-0.7 0 -5"
+      rotation="270 36 180"
+      scale="0.06 0.06 0.06"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #takara_obj; mtl: #takara_mtl"
+      position="0.7 0 -5"
+      rotation="270 36 180"
+      scale="0.06 0.06 0.06"
+    ></a-entity>
+    
+    <!--配置-->
+    <!--家の間の木-->
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="6 0 -2"
+      rotation="0 0 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="4 0 -10"
+      rotation="0 -30 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="15 0 -20"
+      rotation="0 0 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="5 0 6"
+      rotation="0 30 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="4 0 20"
+      rotation="0 -30 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="5 0 -40"
+      rotation="0 -30 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="-5 0 -7"
+      rotation="0 -120 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="-5 0 2"
+      rotation="0 -180 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="-1 0 7"
+      rotation="0 0 0"
+      scale="0.2 0.2 0.2"
+    ></a-entity>
+    <!--家の奥の木-->
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="25 0 5"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="20 0 -20"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="20 0 20"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="-25 0 -3"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="-20 0 -18"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="-20 0 20"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-entity>
+
+    <!--家配置-->
+    <a-entity
+      obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+      position="-7 0 -15"
+      rotation="0 -30 0"
+      scale="2.1 2.1 2.1"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+      position="5 0 -35"
+      rotation="0 -120 0"
+      scale="2.1 2.1 2.1"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+      position="20 0 -10"
+      rotation="0 -170 0"
+      scale="2.1 2.1 2.1"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+      position="-26 0 -13"
+      rotation="0 -30 0"
+      scale="2.1 2.1 2.1"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+      position="32 0 10"
+      rotation="0 -170 0"
+      scale="2.1 2.1 2.1"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+      position="20 0 40"
+      rotation="0 -170 0"
+      scale="2.1 2.1 2.1"
+    ></a-entity>
+    </a-entity>
   
     <!--scene2-->
       <a-entity id="scene2">
@@ -178,8 +393,8 @@
   
     <!--scene3-ba-->
       <a-entity id="scene3-ba">
-        <!--空-->
-        <a-sky color="#eeeeee"></a-sky>
+      <!--空-->
+      <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
           
         <!--床-->
         <a-plane 
@@ -187,15 +402,238 @@
           rotation="-90 0 0" 
           width="300" 
           height="300" 
-          color="#afafaa" 
+          color="#deb068" 
           shadow
         ></a-plane>
+
+        <!--壁-->
+        <a-box 
+        position="0 0 -12" 
+        rotation="0 0 0" 
+        width="100" 
+        height="100" 
+        depth="0.5" 
+        color="#ede4cd" 
+        shadow
+        ></a-box>
+
+        <a-box 
+          position="-12 0 0" 
+          rotation="0 -90 0" 
+          width="100" 
+          height="100" 
+          depth="0.5"
+          color="#ede4cd" 
+          shadow
+      ></a-box>
+
+      <a-box 
+          position="0 0 12" 
+          rotation="0 0 0" 
+          width="100" 
+          height="100" 
+          depth="0.5"
+          color="#ede4cd" 
+          shadow
+      ></a-box>
+
+      <a-box 
+          position="12 0 0" 
+          rotation="0 -90 0" 
+          width="100" 
+          height="100"
+          depth="0.5" 
+          color="#ede4cd" 
+          shadow
+      ></a-box>
+
+      <!--天井-->
+      <a-box 
+          position="0 15 0" 
+          rotation="-90 0 0" 
+          width="100" 
+          height="100"
+          depth="0.5" 
+          color="wheat" 
+          shadow
+      ></a-box>
+
+      <!--動物配置-->
+      <a-obj-model
+        src="#dog_obj"
+        mtl="#dog_mtl"
+        position="3 2 -5"
+        rotation="0 -30 0"
+      ></a-obj-model>
+      <a-obj-model
+        src="#bird_obj"
+        mtl="#bird_mtl"
+        position="-3 2.2 -5"
+        rotation="0 30 0"
+      ></a-obj-model>
+      <a-obj-model
+        src="#monkey_obj"
+        mtl="#monkey_mtl"
+        position="0 2.2 -5"
+        rotation="0 0 0"
+      ></a-obj-model>
+
+
+      <!--黒板配置-->
+      <a-obj-model
+        src="#kokuban_obj"
+        mtl="#kokuban_mtl"
+        position="0 3.8 -6"
+        rotation="0 0 0"
+      ></a-obj-model>
+
+      <!--机配置-->
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="0 1 -1"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="3 1 -1"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="6 1 -1"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="-3 1 -1"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="-6 1 -1"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="-6 1 2"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="-6 1 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="-6 1 8"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="3 1 2"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="3 1 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="3 1 8"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="0 1 2"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="0 1 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="0 1 8"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="6 1 2"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="6 1 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="6 1 8"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="-3 1 2"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="-3 1 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
+      <a-obj-model
+        src="#desk_obj"
+        mtl="#desk_mtl"
+        position="-3 1 8"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-obj-model>
       </a-entity>
   
     <!--scene3-bb-->
       <a-entity id="scene3-bb">
-        <!--空-->
-        <a-sky color="#eeeeee" id="sky"></a-sky>
+      <!--空-->
+      <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
           
         <!--床-->
         <a-plane 
@@ -203,10 +641,353 @@
           rotation="-90 0 0" 
           width="300" 
           height="300" 
-          color="#afafaa" 
+          color="#deb068" 
           shadow
         ></a-plane>
-      </a-entity>  
+
+        <!--壁-->
+        <a-box 
+        position="0 0 -12" 
+        rotation="0 0 0" 
+        width="100" 
+        height="100" 
+        depth="0.5" 
+        color="#ede4cd" 
+        shadow
+        ></a-box>
+
+        <a-box 
+        position="-12 0 0" 
+        rotation="0 -90 0" 
+        width="100" 
+        height="100" 
+        depth="0.5"
+        color="#ede4cd" 
+        shadow
+        ></a-box>
+
+        <a-box 
+        position="0 0 12" 
+        rotation="0 0 0" 
+        width="100" 
+        height="100" 
+        depth="0.5"
+        color="#ede4cd" 
+        shadow
+        ></a-box>
+
+        <a-box 
+        position="12 0 0" 
+        rotation="0 -90 0" 
+        width="100" 
+        height="100"
+        depth="0.5" 
+        color="#ede4cd" 
+        shadow
+        ></a-box>
+
+        <!--天井-->
+        <a-box 
+        position="0 15 0" 
+        rotation="-90 0 0" 
+        width="100" 
+        height="100"
+        depth="0.5" 
+        color="wheat" 
+        shadow
+        ></a-box>
+
+      <!--黒板配置-->
+      <a-obj-model
+      src="#kokuban_obj"
+      mtl="#kokuban_mtl"
+      position="0 3.8 -6"
+      rotation="0 0 0"
+      ></a-obj-model>
+
+      <!--動物配置-->
+      <a-obj-model
+      src="#bird_obj"
+      mtl="#bird_mtl"
+      position="0 2.28 1.5"
+      rotation="0 180 0"
+      scale="0.5 0.5 0.5"
+      ></a-obj-model>
+      <a-obj-model
+      src="#dog_obj"
+      mtl="#dog_mtl"
+      position="-2.1 1.8 0"
+      rotation="0 180 0"
+      scale="0.5 0.5 0.5"
+      ></a-obj-model>
+      <a-obj-model
+      src="#monkey_obj"
+      mtl="#monkey_mtl"
+      position="2 1.8 0"
+      rotation="0 180 0"
+      scale="0.5 0.5 0.5"
+      ></a-obj-model>
+
+
+    <!--人配置-->
+    <a-obj-model
+      src="#teacher_obj"
+      mtl="#teacher_mtl"
+      position="2.5 2.55 -5"
+      rotation="0 -40 0"
+      scale="0.7 0.7 0.7"
+    ></a-obj-model>
+    <a-obj-model
+      src="#boy_obj"
+      mtl="#boy_mtl"
+      position="3 2.15 3"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#boy_obj"
+      mtl="#boy_mtl"
+      position="3 2.15 9"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#boy_obj"
+      mtl="#boy_mtl"
+      position="6 2.15 0.3"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#boy_obj"
+      mtl="#boy_mtl"
+      position="6 2.15 6"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#boy_obj"
+      mtl="#boy_mtl"
+      position="-3 2.15 3"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#boy_obj"
+      mtl="#boy_mtl"
+      position="-3 2.15 9"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#boy_obj"
+      mtl="#boy_mtl"
+      position="-6 2.15 6"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#boy_obj"
+      mtl="#boy_mtl"
+      position="-6 2.15 0"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#girl_obj"
+      mtl="#girl_mtl"
+      position="6 2.15 3"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#girl_obj"
+      mtl="#girl_mtl"
+      position="3 2.15 6"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#girl_obj"
+      mtl="#girl_mtl"
+      position="6 2.15 9"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#girl_obj"
+      mtl="#girl_mtl"
+      position="-3 2.15 6"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#girl_obj"
+      mtl="#girl_mtl"
+      position="-6 2.15 3"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+    <a-obj-model
+      src="#girl_obj"
+      mtl="#girl_mtl"
+      position="-6 2.15 9"
+      rotation="0 180 0"
+      scale="0.6 0.6 0.6"
+    ></a-obj-model>
+
+    <!--机配置-->
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="0 1 -1"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="3 1 -1"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="6 1 -1"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="-3 1 -1"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="-6 1 -1"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="-6 1 2"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="-6 1 5"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="-6 1 8"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="3 1 2"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="3 1 5"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="3 1 8"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="0 1 2"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="0 1 5"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="0 1 8"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="6 1 2"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="6 1 5"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="6 1 8"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="-3 1 2"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="-3 1 5"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+    <a-obj-model
+      src="#desk_obj"
+      mtl="#desk_mtl"
+      position="-3 1 8"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+    ></a-obj-model>
+
+    <!--薬配置-->
+    <a-obj-model
+      src="#poison_obj"
+      mtl="#poison_mtl"
+      position="-1 1 -1"
+      rotation="0 0 0"
+      scale="0.1 0.1 0.1"
+    ></a-obj-model>
+    </a-entity>  
+  </a-entity>  
   
     <!--scene4-a-->
       <a-entity id="scene4-a">
@@ -226,149 +1007,125 @@
         <!--配置-->
         <!--家の間の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="16 0 -2"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 -15"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="15 0 -20"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 6"
+        rotation="0 30 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 20"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 -40"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 -7"
+        rotation="0 -120 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 2"
+        rotation="0 -180 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-1 0 7"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
-        <!--家の奥の木-->
+      <!--家の奥の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="25 0 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 -20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-25 0 -3"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 -18"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-      </a-entity>  
+      <a-entity
+      obj-model="obj: #tree_obj; mtl: #tree_mtl"
+      position="-20 0 20"
+      rotation="0 0 0"
+      scale="0.3 0.3 0.3"
+      ></a-entity>
+
+      <!--家配置-->
+      <a-entity
+      obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+      position="8 0 -4"
+      rotation="0 180 0"
+      scale="2.5 2.5 2.5"
+      ></a-entity>
+
+    <!--人配置-->
+    <a-entity
+      obj-model="obj: #oldman_obj; mtl: #oldman_mtl"
+      position="-1 2 -2.8"
+      rotation="0 20 0"
+      scale="0.5 0.5 0.5"
+    ></a-entity>
+    <a-entity
+      obj-model="obj: #oldwoman_obj; mtl: #oldwoman_mtl"
+      position="1 2 -2.8"
+      rotation="0 -20 0"
+      scale="0.5 0.5 0.5"
+    ></a-entity>
+    </a-entity>
   
     <!--scene4-ba-->
       <a-entity id="scene4-ba">
-        <!--空-->
-        <a-sky color="#eeeeee"></a-sky>
+      <!--空-->
+      <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
           
-        <!--床-->
-        <a-plane 
-          position="0 0 -6" 
-          rotation="-90 0 0" 
-          width="300" 
-          height="300" 
-          color="#afafaa" 
-          shadow
-        ></a-plane>
-      </a-entity> 
-        
-    <!--scene4-bb-->
-      <a-entity id="scene4-bb">
-        <!--空-->
-        <a-sky color="#eeeeee" id="sky"></a-sky>
-          
-        <!--床-->
-        <a-plane 
-          position="0 0 -6" 
-          rotation="-90 0 0" 
-          width="300" 
-          height="300" 
-          color="#afafaa" 
-          shadow
-        ></a-plane>
-      </a-entity>
-  
-    <!--scene5-a-->
-      <a-entity id="scene5-a">
-        <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
-      
         <!--床-->
         <a-plane 
           position="0 0 -6" 
@@ -378,122 +1135,513 @@
           color="#88cb7f" 
           shadow
         ></a-plane>
-  
-        
-        
+
         <!--配置-->
         <!--家の間の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="16 0 -2"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 -15"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="15 0 -20"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 6"
+        rotation="0 30 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 20"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 -40"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 -7"
+        rotation="0 -120 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 2"
+        rotation="0 -180 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-1 0 7"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <!--家の奥の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="25 0 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 -20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-25 0 -3"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 -18"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
+
+        <!--家配置-->
+        <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="8 0 -4"
+        rotation="0 180 0"
+        scale="2.5 2.5 2.5"
+        ></a-entity>
+
+        <!--人配置-->
+        <a-entity
+        obj-model="obj: #oldman_obj; mtl: #oldman_mtl"
+        position="-1 2 -2.8"
+        rotation="0 20 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #oldwoman_obj; mtl: #oldwoman_mtl"
+        position="1 2 -2.8"
+        rotation="0 -20 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+      </a-entity> 
+        
+    <!--scene4-bb-->
+      <a-entity id="scene4-bb">
+      <!--空-->
+      <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+          
+        <!--床-->
+        <a-plane 
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="300" 
+          height="300" 
+          color="#88cb7f" 
+          shadow
+        ></a-plane>
+
+        <!--配置-->
+        <!--家の間の木-->
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="16 0 -2"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 -15"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="15 0 -20"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 6"
+        rotation="0 30 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 20"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 -40"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 -7"
+        rotation="0 -120 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 2"
+        rotation="0 -180 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-1 0 7"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <!--家の奥の木-->
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="25 0 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 -20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-25 0 -3"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 -18"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+
+        <!--家配置-->
+        <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="8 0 -4"
+        rotation="0 180 0"
+        scale="2.5 2.5 2.5"
+        ></a-entity>
+
+        <!--人配置-->
+        <a-entity
+        obj-model="obj: #oldman_obj; mtl: #oldman_mtl"
+        position="-1 2 -2.8"
+        rotation="0 20 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #oldwoman_obj; mtl: #oldwoman_mtl"
+        position="1 2 -2.8"
+        rotation="0 -20 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+      </a-entity>
+  
+    <!--scene5-a-->
+      <a-entity id="scene5-a">
+        <!--空-->
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+      
+        <!--床-->
+        <a-plane 
+        position="0 0 -6" 
+        rotation="-90 0 0" 
+        width="300" 
+        height="300" 
+        color="#88cb7f" 
+        shadow
+        ></a-plane>
+        <a-plane 
+        position="0 0 -6" 
+        rotation="-90 0 0" 
+        width="6" 
+        height="280" 
+        color="#d6ac7c" 
+        shadow
+        ></a-plane>
   
         <!--配置-->
+        <!--家の間の木-->
         <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="3.5 0 -2"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 -15"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="15 0 -20"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 6"
+        rotation="0 30 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 20"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 -40"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 -7"
+        rotation="0 -120 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 2"
+        rotation="0 -180 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-4 0 7"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="25 0 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 -20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-25 0 -3"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 -18"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 100"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-30 0 90"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-10 0 60"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-13 0 50"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-15 0 40"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-10 0 30"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 100"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="30 0 90"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="10 0 60"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="13 0 50"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="15 0 40"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="10 0 30"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="30 0 30"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="45 0 30"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+
+      <!--家配置-->
+        <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="8 -1 180"
+        rotation="0 180 0"
+        scale="1.8 1.8 1.8"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="-8 -1 180"
+        rotation="0 180 0"
+        scale="1.8 1.8 1.8"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="-13 -1 160"
+        rotation="0 180 0"
+        scale="1.8 1.8 1.8"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="13 -1 160"
+        rotation="0 180 0"
+        scale="1.8 1.8 1.8"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="1 -1 200"
+        rotation="0 180 0"
+        scale="2.2 2.2 2.2"
+        ></a-entity>
+
+      <!--動物配置-->
+        <a-entity
+        obj-model="obj: #dog_obj; mtl: #dog_mtl"
+        position="-1 2 -2.8"
+        rotation="0 20 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #monkey_obj; mtl: #monkey_mtl"
+        position="0 2 -2.8"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #bird_obj; mtl: #bird_mtl"
+        position="1 2 -2.8"
+        rotation="0 -20 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
       </a-entity>
   
     <!--scene5-ba-->
       <a-entity id="scene5-ba">
         <!--空-->
-        <a-sky color="#eeeeee"></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
           
         <!--床-->
         <a-plane 
@@ -501,15 +1649,252 @@
           rotation="-90 0 0" 
           width="300" 
           height="300" 
-          color="#afafaa" 
+          color="#88cb7f" 
           shadow
         ></a-plane>
+        <a-plane 
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="6" 
+          height="280" 
+          color="#d6ac7c" 
+          shadow
+        ></a-plane>
+
+      
+        <!--木の配置-->
+        <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="3.5 0 -2"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 -15"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="15 0 -20"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 6"
+          rotation="0 30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="4 0 20"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="5 0 -40"
+          rotation="0 -30 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 -7"
+          rotation="0 -120 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-5 0 2"
+          rotation="0 -180 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-4 0 7"
+          rotation="0 0 0"
+          scale="0.2 0.2 0.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="25 0 5"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 -20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-25 0 -3"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 -18"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 20"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-20 0 100"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-30 0 90"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-10 0 60"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-13 0 50"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-15 0 40"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="-10 0 30"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="20 0 100"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="30 0 90"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="10 0 60"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="13 0 50"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="15 0 40"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="10 0 30"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="30 0 30"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #tree_obj; mtl: #tree_mtl"
+          position="45 0 30"
+          rotation="0 0 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+
+        <!--家配置-->
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="8 -1 180"
+          rotation="0 180 0"
+          scale="1.8 1.8 1.8"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-8 -1 180"
+          rotation="0 180 0"
+          scale="1.8 1.8 1.8"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-13 -1 160"
+          rotation="0 180 0"
+          scale="1.8 1.8 1.8"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="13 -1 160"
+          rotation="0 180 0"
+          scale="1.8 1.8 1.8"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="1 -1 200"
+          rotation="0 180 0"
+          scale="2.2 2.2 2.2"
+        ></a-entity>
+
+        <!--動物配置-->
+        <a-entity
+          obj-model="obj: #dog_obj; mtl: #dog_mtl"
+          position="-1 2 -2.8"
+          rotation="0 20 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #monkey_obj; mtl: #monkey_mtl"
+          position="0 2 -2.8"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #bird_obj; mtl: #bird_mtl"
+          position="1 2 -2.8"
+          rotation="0 -20 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
       </a-entity>
   
     <!--scene6-aa-->
       <a-entity id="scene6-aa">
         <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
         <a-plane 
@@ -517,123 +1902,248 @@
             rotation="-90 0 0" 
             width="300" 
             height="300" 
-            color="#88cb7f" 
+            color="#26170b" 
             shadow
         ></a-plane>
   
-        <!--配置-->
-        <!--家の間の木-->
+        <!--鬼配置-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #oni_obj; mtl: #oni_mtl"
+        position="-5.1 2.3 -9"
+        rotation="0 0 0"
+        scale="1.2 1.2 1.2"
+        ></a-entity>
+
+        <!--動物配置-->
+        <a-entity
+        obj-model="obj: #pheasant_obj; mtl: #pheasant_mtl"
+        position="-1 1.3 0.6"
+        rotation="0 180 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #monkey_obj; mtl: #monkey_mtl"
+        position="1 1.3 0.6"
+        rotation="0 180 0"
+        scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #dog_obj; mtl: #dog_mtl"
+        position="0 1.3 1"
+        rotation="0 180 0"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+
+        <!--宝配置-->
+        <a-entity
+        obj-model="obj: #takara_obj; mtl: #takara_mtl"
+        position="1 1 -15"
+        rotation="270 -40 180"
+        scale="0.1 0.1 0.1"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #takara_obj; mtl: #takara_mtl"
+        position="5 1 -15"
+        rotation="270 -40 180"
+        scale="0.1 0.1 0.1"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #takara_obj; mtl: #takara_mtl"
+        position="-5 1 -15"
+        rotation="270 -40 180"
+        scale="0.1 0.1 0.1"
+        ></a-entity>
+
+      <!--枯れ木配置前面-->
+        <a-entity
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-5.1 1.8 -9"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="8 2 -15"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-1 2.3 -15"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
-          rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="19 2.1 -19"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <!--家の奥の木-->
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-13 2.3 -14"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="15 1.3 -5"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-9 1.3 0"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-17 1.3 3"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-20 1.3 -6"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <!--枯れ木配置後面-->
+        <a-entity
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-5.1 1.8 9"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
-          rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="8 1.8 15"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-1 1.8 15"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="19 1.9 19"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="-13 1.8 16"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+        position="15 1.3 5"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5"
         ></a-entity>
   
-        <!--配置-->
+        <!--岩配置-->
         <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="6 1.7 -2"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="4 1.7 -10"
+        rotation="0 -30 0"
+        scale="1.0 1.0 1.0"
         ></a-entity>
-      </a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="15 1.7 -20"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="5 1.7 6"
+        rotation="0 30 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="4 1.7 20"
+        rotation="0 -30 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="5 1.7 -40"
+        rotation="0 -30 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="-5 1.7 -7"
+        rotation="0 -120 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="-5 1.7 2"
+        rotation="0 -180 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="-1 1.7 7"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="25 1.7 5"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="20 1.7 -20"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="20 1.7 20"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="-25 1.7 -3"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="-20 1.7 -18"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+        obj-model="obj: #rock_obj; mtl: #rock_mtl"
+        position="-20 1.7 20"
+        rotation="0 0 0"
+        scale="1.0 1.0 1.0"
+        ></a-entity>
+    </a-entity>
   
     <!--scene6-ab-->
       <a-entity id="scene6-ab">
         <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
         <a-plane 
@@ -641,123 +2151,249 @@
             rotation="-90 0 0" 
             width="300" 
             height="300" 
-            color="#88cb7f" 
+            color="#26170b" 
             shadow
         ></a-plane>
         
-        <!--配置-->
-        <!--家の間の木-->
+        <!--鬼配置-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #oni_obj; mtl: #oni_mtl"
+        position="-5.1 2.3 -9"
+        rotation="0 0 0"
+        scale="1.2 1.2 1.2"
+        ></a-entity>
+
+        <!--動物配置-->
+        <a-entity
+          obj-model="obj: #pheasant_obj; mtl: #pheasant_mtl"
+          position="-1 1.3 0.6"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
+          obj-model="obj: #monkey_obj; mtl: #monkey_mtl"
+          position="1 1.3 0.6"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #dog_obj; mtl: #dog_mtl"
+          position="0 1.3 1"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="1 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="5 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-5 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+
+        <!--枯れ木配置前面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 -9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 2 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 2.3 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 2.1 -19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 2.3 -14"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 -5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-9 1.3 0"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-17 1.3 3"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-20 1.3 -6"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+
+        <!--枯れ木配置後面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 1.9 19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 1.8 16"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+
+        <!--岩配置-->
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="6 1.7 -2"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 -10"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="15 1.7 -20"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 6"
           rotation="0 30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 20"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 -40"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 -7"
           rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 2"
           rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-1 1.7 7"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
-        <!--家の奥の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="25 1.7 5"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 -20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-25 1.7 -3"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 -18"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
+          scale="1.0 1.0 1.0"
         ></a-entity>
       </a-entity>
   
     <!--scene6-ba-->
       <a-entity id="scene6-ba">
         <!--空-->
-        <a-sky color="#eeeeee" id="sky"></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
         <a-plane 
@@ -765,16 +2401,249 @@
           rotation="-90 0 0" 
           width="300" 
           height="300" 
-          color="#afafaa" 
+          color="#26170b" 
           shadow
         ></a-plane>
           
+        <!--鬼配置-->
+        <a-entity
+        obj-model="obj: #oni_obj; mtl: #oni_mtl"
+        position="-5.1 2.3 -9"
+        rotation="0 0 0"
+        scale="1.2 1.2 1.2"
+        ></a-entity>
+
+        <!--動物配置-->
+        <a-entity
+          obj-model="obj: #pheasant_obj; mtl: #pheasant_mtl"
+          position="-1 1.3 0.6"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #monkey_obj; mtl: #monkey_mtl"
+          position="1 1.3 0.6"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #dog_obj; mtl: #dog_mtl"
+          position="0 1.3 1"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="1 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="5 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-5 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+
+        <!--枯れ木配置前面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 -9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 2 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 2.3 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 2.1 -19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 2.3 -14"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 -5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-9 1.3 0"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-17 1.3 3"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-20 1.3 -6"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+
+        <!--枯れ木配置後面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 1.9 19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 1.8 16"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+    
+        <!--岩配置-->
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="6 1.7 -2"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 -10"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="15 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 6"
+          rotation="0 30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 20"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 -40"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 -7"
+          rotation="0 -120 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 2"
+          rotation="0 -180 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-1 1.7 7"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="25 1.7 5"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-25 1.7 -3"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 -18"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
       </a-entity>
   
     <!--scene6-bb-->
       <a-entity id="scene6-bb">
         <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
         <a-plane 
@@ -782,123 +2651,249 @@
             rotation="-90 0 0" 
             width="300" 
             height="300" 
-            color="#88cb7f" 
+            color="#26170b" 
             shadow
         ></a-plane>
   
-        <!--配置-->
-        <!--家の間の木-->
+        <!--鬼配置-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #oni_obj; mtl: #oni_mtl"
+        position="-5.1 2.3 -9"
+        rotation="0 0 0"
+        scale="1.2 1.2 1.2"
+        ></a-entity>
+
+        <!--動物配置-->
+        <a-entity
+          obj-model="obj: #pheasant_obj; mtl: #pheasant_mtl"
+          position="-1 1.3 0.6"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
+          obj-model="obj: #monkey_obj; mtl: #monkey_mtl"
+          position="1 1.3 0.6"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #dog_obj; mtl: #dog_mtl"
+          position="0 1.3 1"
+          rotation="0 180 0"
+          scale="0.3 0.3 0.3"
+        ></a-entity>
+
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="1 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="5 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-5 1 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+
+        <!--枯れ木配置前面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 -9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 2 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 2.3 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 2.1 -19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 2.3 -14"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 -5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-9 1.3 0"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-17 1.3 3"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-20 1.3 -6"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+
+        <!--枯れ木配置後面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 1.9 19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 1.8 16"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+    
+        <!--岩配置-->
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="6 1.7 -2"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 -10"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="15 1.7 -20"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 6"
           rotation="0 30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 20"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 -40"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 -7"
           rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 2"
           rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-1 1.7 7"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
-        <!--家の奥の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="25 1.7 5"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 -20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-25 1.7 -3"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 -18"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
+          scale="1.0 1.0 1.0"
         ></a-entity>
       </a-entity>
       
     <!--scene7-ab-->
       <a-entity id="scene7-ab">
         <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
         <a-plane 
@@ -906,123 +2901,264 @@
             rotation="-90 0 0" 
             width="300" 
             height="300" 
-            color="#88cb7f" 
+            color="#26170b" 
             shadow
         ></a-plane>
         
-        <!--配置-->
-        <!--家の間の木-->
+        <!--鬼配置-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #oni_obj; mtl: #oni_mtl"
+        position="-5.1 2.3 -9"
+        rotation="0 0 0"
+        scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="5.1 2.3 -12"
+          rotation="0 -35 0"
+          scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-17.1 2.3 -11"
           rotation="0 30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-9.1 2.3 -16"
+          rotation="0 0 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-1.1 2.3 -16"
+          rotation="0 0 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-27.1 2.3 -16"
+          rotation="0 40 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="22.1 2.3 -18"
+          rotation="0 -50 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="1 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="5 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-5 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+
+        <!--枯れ木配置前面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 -9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 2 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 2.3 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 2.1 -19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 2.3 -14"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 -5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-9 1.3 0"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-17 1.3 3"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-20 1.3 -6"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <!--枯れ木配置後面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 1.9 19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 1.8 16"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+
+        <!--岩配置-->
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="6 1.7 -2"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 -10"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="15 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 6"
+          rotation="0 30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 20"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 -40"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 -7"
           rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 2"
           rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-1 1.7 7"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
-        <!--家の奥の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="25 1.7 5"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 -20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-25 1.7 -3"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 -18"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
+          scale="1.0 1.0 1.0"
         ></a-entity>
       </a-entity>
   
     <!--scene7-bb-->
       <a-entity id="scene7-bb">
         <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
         <a-plane 
@@ -1030,123 +3166,264 @@
             rotation="-90 0 0" 
             width="300" 
             height="300" 
-            color="#88cb7f" 
+            color="#26170b" 
             shadow
         ></a-plane>
         
-        <!--配置-->
-        <!--家の間の木-->
+        <!--鬼配置-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #oni_obj; mtl: #oni_mtl"
+        position="-5.1 2.3 -9"
+        rotation="0 0 0"
+        scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #oni_obj; mtl: #oni_mtl"
+        position="5.1 2.3 -12"
+        rotation="0 -35 0"
+        scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-17.1 2.3 -11"
           rotation="0 30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-9.1 2.3 -16"
+          rotation="0 0 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-1.1 2.3 -16"
+          rotation="0 0 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="-27.1 2.3 -16"
+          rotation="0 40 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #oni_obj; mtl: #oni_mtl"
+          position="22.1 2.3 -18"
+          rotation="0 -50 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="1 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="5 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-5 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+
+        <!--枯れ木配置前面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 -9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 2 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 2.3 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 2.1 -19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 2.3 -14"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 -5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-9 1.3 0"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-17 1.3 3"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-20 1.3 -6"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <!--枯れ木配置後面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 1.9 19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 1.8 16"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+
+        <!--岩配置-->
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="6 1.7 -2"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 -10"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="15 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 6"
+          rotation="0 30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 20"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 -40"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 -7"
           rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 2"
           rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-1 1.7 7"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
-        <!--家の奥の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="25 1.7 5"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 -20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-25 1.7 -3"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 -18"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
+          scale="1.0 1.0 1.0"
         ></a-entity>
       </a-entity>
   
     <!--scene8-bb-->
       <a-entity id="scene8-bb">
         <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
         <a-plane 
@@ -1154,123 +3431,272 @@
             rotation="-90 0 0" 
             width="300" 
             height="300" 
-            color="#88cb7f" 
+            color="#26170b" 
             shadow
         ></a-plane>
   
-        <!--配置-->
-        <!--家の間の木-->
+        <!--薬配置-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
+        obj-model="obj: #taoretapo_obj; mtl: #taoretapo_mtl"
+        position="0 0 -5"
+        rotation="0 170 0"
+        scale="0.2 0.2 0.2"
+        ></a-entity>
+
+        <!--鬼配置-->
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-5.1 2.3 -9"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="5.1 2.3 -12"
+          rotation="0 -35 0"
+          scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-17.1 2.3 -11"
           rotation="0 30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-9.1 2.3 -16"
+          rotation="0 0 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-1.1 2.3 -16"
+          rotation="0 0 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-27.1 2.3 -16"
+          rotation="0 40 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="22.1 2.3 -18"
+          rotation="0 -50 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="1 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="5 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-5 0 -15"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+
+        <!--枯れ木配置前面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 -9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 2 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 2.3 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 2.1 -19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 2.3 -14"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 -5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-9 1.3 0"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-17 1.3 3"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-20 1.3 -6"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <!--枯れ木配置後面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 1.9 19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 1.8 16"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+    
+        <!--岩配置-->
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="6 1.7 -2"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 -10"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="15 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 6"
+          rotation="0 30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 20"
           rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 -40"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 -7"
           rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 2"
           rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-1 1.7 7"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="1.0 1.0 1.0"
         ></a-entity>
-        <!--家の奥の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="25 1.7 5"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 -20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-25 1.7 -3"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 -18"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 20"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
-        ></a-entity>
-  
-        <!--配置-->
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
-          rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
-          rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
+          scale="1.0 1.0 1.0"
         ></a-entity>
       </a-entity>
   
     <!--scene9-aa-->
       <a-entity id="scene9-aa">
         <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
         
         <!--床-->
         <a-plane 
@@ -1278,124 +3704,530 @@
             rotation="-90 0 0" 
             width="300" 
             height="300" 
-            color="#88cb7f" 
+            color="#26170b" 
             shadow
         ></a-plane>
         
-        <!--配置-->
-        <!--家の間の木-->
+        <!--鬼配置-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="6 0 -2"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+        obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+        position="-5.1 2.3 -9"
+        rotation="0 0 0"
+        scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 -10"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="15 0 -20"
-          rotation="0 0 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 6"
-          rotation="0 30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="4 0 20"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="5 0 -40"
-          rotation="0 -30 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 -7"
-          rotation="0 -120 0"
-          scale="0.2 0.2 0.2"
-        ></a-entity>
-        <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-5 0 2"
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="5.1 2.3 -70"
           rotation="0 -180 0"
-          scale="0.2 0.2 0.2"
+          scale="1.2 1.2 1.2"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-1 0 7"
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-17.1 2.3 -40"
+          rotation="0 180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-9.1 2.3 -40"
+          rotation="0 180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-1.1 2.3 -40"
+          rotation="0 180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-27.1 2.3 -45"
+          rotation="0 180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="22.1 2.3 -40"
+          rotation="0 -180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="1 0 -5"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="5 0 -5"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-3 0 -5"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+
+        <!--枯れ木配置前面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 -9"
           rotation="0 0 0"
-          scale="0.2 0.2 0.2"
+          scale="0.5 0.5 0.5"
         ></a-entity>
-        <!--家の奥の木-->
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="25 0 5"
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 2 -15"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 -20"
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 2.3 -15"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="20 0 20"
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 2.1 -19"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-25 0 -3"
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 2.3 -14"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 -18"
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 -5"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="0.5 0.5 0.5"
         ></a-entity>
         <a-entity
-          obj-model="obj: #tree_obj; mtl: #tree_mtl"
-          position="-20 0 20"
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-9 1.3 0"
           rotation="0 0 0"
-          scale="0.3 0.3 0.3"
+          scale="0.5 0.5 0.5"
         ></a-entity>
-  
-        <!--配置-->
         <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="-7 0 -15"
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-17 1.3 3"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-20 1.3 -6"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <!--枯れ木配置後面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 1.9 19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 1.8 16"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+
+        <!--岩配置-->
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="6 1.7 -2"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 -10"
           rotation="0 -30 0"
-          scale="2.1 2.1 2.1"
+          scale="1.0 1.0 1.0"
         ></a-entity>
         <a-entity
-          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="15 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 6"
+          rotation="0 30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 20"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 -40"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 -7"
           rotation="0 -120 0"
-          scale="2.1 2.1 2.1"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 2"
+          rotation="0 -180 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-1 1.7 7"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="25 1.7 5"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-25 1.7 -3"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 -18"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
         ></a-entity>
       </a-entity>
+
+      <!--scene9-bb-->
+      <a-entity id="scene9-bb">
+        <!--空-->
+        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:black;bottomColor:red" geometry="" visible="" id="sky" position=""></a-sky>
+       
+        <!--床-->
+        <a-plane 
+            position="0 0 -6" 
+            rotation="-90 0 0" 
+            width="300" 
+            height="300" 
+            color="#26170b" 
+            shadow
+        ></a-plane>
   
-    <!--scene10-aa-->
+        <!--鬼配置-->
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-5.1 2.3 -9"
+          rotation="0 0 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="5.1 2.3 -70"
+          rotation="0 -180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-17.1 2.3 -40"
+          rotation="0 180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-9.1 2.3 -40"
+          rotation="0 180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-1.1 2.3 -40"
+          rotation="0 180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="-27.1 2.3 -45"
+          rotation="0 180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #nakuoni_obj; mtl: #nakuoni_mtl"
+          position="22.1 2.3 -40"
+          rotation="0 -180 0"
+          scale="1.2 1.2 1.2"
+        ></a-entity>
+  
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="1 0 -5"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="5 0 -5"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-3 0 -5"
+          rotation="270 -40 180"
+          scale="0.1 0.1 0.1"
+        ></a-entity>
+ 
+        <!--枯れ木配置前面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 -9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 2 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 2.3 -15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 2.1 -19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 2.3 -14"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 -5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-9 1.3 0"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-17 1.3 3"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-20 1.3 -6"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <!--枯れ木配置後面-->
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-5.1 1.8 9"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="8 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-1 1.8 15"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="19 1.9 19"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="-13 1.8 16"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #kareki_obj; mtl: #kareki_mtl"
+          position="15 1.3 5"
+          rotation="0 0 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+  
+        <!--岩配置-->
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="6 1.7 -2"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 -10"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="15 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 6"
+          rotation="0 30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="4 1.7 20"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="5 1.7 -40"
+          rotation="0 -30 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 -7"
+          rotation="0 -120 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-5 1.7 2"
+          rotation="0 -180 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-1 1.7 7"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="25 1.7 5"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 -20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="20 1.7 20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-25 1.7 -3"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 -18"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #rock_obj; mtl: #rock_mtl"
+          position="-20 1.7 20"
+          rotation="0 0 0"
+          scale="1.0 1.0 1.0"
+        ></a-entity>
+       </a-entity>
+
+      <!--scene10-aa-->
       <a-entity id="scene10-aa">
         <!--空-->
-        <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
-        
+      <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+      
         <!--床-->
         <a-plane 
             position="0 0 -6" 
@@ -1405,9 +4237,92 @@
             color="#88cb7f" 
             shadow
         ></a-plane>
-        
-        <!--配置-->
-        <!--家の間の木-->
+
+        <!--宝配置-->
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="2 0 -5"
+          rotation="270 -40 180"
+          scale="0.06 0.06 0.06"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="-1.3 0 -5"
+          rotation="270 36 180"
+          scale="0.06 0.06 0.06"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #takara_obj; mtl: #takara_mtl"
+          position="0.7 0 -5"
+          rotation="270 36 180"
+          scale="0.06 0.06 0.06"
+        ></a-entity>
+
+        <!--動物配置-->
+        <a-entity
+          obj-model="obj: #dog_obj; mtl: #dog_mtl"
+          position="5 2 -8"
+          rotation="0 20 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #monkey_obj; mtl: #monkey_mtl"
+          position="7 2 -7"
+          rotation="0 180 0"
+          scale="0.5 0.5 0.5"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #bird_obj; mtl: #bird_mtl"
+          position="6 2 -7"
+          rotation="0 -60 0"
+          scale="0.4 0.4 0.4"
+        ></a-entity>
+
+        <!--人配置-->
+        <a-obj-model
+          src="#boy_obj"
+          mtl="#boy_mtl"
+          position="10 2.15 3"
+          rotation="0 180 0"
+          scale="0.6 0.6 0.6"
+        ></a-obj-model>
+        <a-obj-model
+          src="#boy_obj"
+          mtl="#boy_mtl"
+          position="11 2.15 1.5"
+          rotation="0 -90 0"
+          scale="0.6 0.6 0.6"
+        ></a-obj-model>
+        <a-obj-model
+          src="#boy_obj"
+          mtl="#boy_mtl"
+          position="1 2.15 -24"
+          rotation="0 -60 0"
+          scale="0.6 0.6 0.6"
+        ></a-obj-model>
+        <a-obj-model
+          src="#girl_obj"
+          mtl="#girl_mtl"
+          position="-1 2.15 -24"
+          rotation="0 40 0"
+          scale="0.6 0.6 0.6"
+        ></a-obj-model>
+        <a-obj-model
+          src="#oldman_obj"
+          mtl="#oldman_mtl"
+          position="-10 2.15 -8"
+          rotation="0 50 0"
+          scale="0.6 0.6 0.6"
+        ></a-obj-model>
+        <a-obj-model
+          src="#oldwoman_obj"
+          mtl="#oldwoman_mtl"
+          position="-10 2.15 -6"
+          rotation="0 60 0"
+          scale="0.6 0.6 0.6"
+        ></a-obj-model>
+
+        <!--木の配置-->
         <a-entity
           obj-model="obj: #tree_obj; mtl: #tree_mtl"
           position="6 0 -2"
@@ -1462,7 +4377,6 @@
           rotation="0 0 0"
           scale="0.2 0.2 0.2"
         ></a-entity>
-        <!--家の奥の木-->
         <a-entity
           obj-model="obj: #tree_obj; mtl: #tree_mtl"
           position="25 0 5"
@@ -1499,8 +4413,8 @@
           rotation="0 0 0"
           scale="0.3 0.3 0.3"
         ></a-entity>
-  
-        <!--配置-->
+
+        <!--家配置-->
         <a-entity
           obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
           position="-7 0 -15"
@@ -1509,11 +4423,35 @@
         ></a-entity>
         <a-entity
           obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
-          position="5 0 -60"
+          position="5 0 -35"
           rotation="0 -120 0"
           scale="2.1 2.1 2.1"
         ></a-entity>
-      </a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="20 0 -10"
+          rotation="0 -170 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="-26 0 -13"
+          rotation="0 -30 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="32 0 10"
+          rotation="0 -170 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+        <a-entity
+          obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+          position="20 0 40"
+          rotation="0 -170 0"
+          scale="2.1 2.1 2.1"
+        ></a-entity>
+    </a-entity>
   
     <!--scene10-ab-->
       <a-entity id="scene10-ab">
@@ -1530,8 +4468,7 @@
             shadow
         ></a-plane>
         
-        <!--配置-->
-        <!--家の間の木-->
+        <!--木の配置-->
         <a-entity
           obj-model="obj: #tree_obj; mtl: #tree_mtl"
           position="6 0 -2"
@@ -1624,7 +4561,7 @@
           scale="0.3 0.3 0.3"
         ></a-entity>
       
-        <!--配置-->
+        <!--家の配置-->
         <a-entity
           obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
           position="-7 0 -15"
@@ -1639,9 +4576,235 @@
         ></a-entity>
       </a-entity>
 
-      <a-entity id="scene9-bb"></a-entity>
+      <!--scene10-bb-->
+      <a-entity id="scene10-bb">
+        <!--空-->
+      <a-sky radius="200" theta-length="110" material="shader:gradientshader;topColor:skyblue;bottomColor:white" geometry="" visible="" id="sky" position=""></a-sky>
+      
+      <!--床-->
+      <a-plane 
+          position="0 0 -6" 
+          rotation="-90 0 0" 
+          width="300" 
+          height="300" 
+          color="#88cb7f" 
+          shadow
+      ></a-plane>
 
-      <a-entity id="scene10-bb"></a-entity>
+      <!--宝配置-->
+      <a-entity
+        obj-model="obj: #takara_obj; mtl: #takara_mtl"
+        position="2 0 -5"
+        rotation="270 -40 180"
+        scale="0.06 0.06 0.06"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #takara_obj; mtl: #takara_mtl"
+        position="-1.3 0 -5"
+        rotation="270 36 180"
+        scale="0.06 0.06 0.06"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #takara_obj; mtl: #takara_mtl"
+        position="0.7 0 -5"
+        rotation="270 36 180"
+        scale="0.06 0.06 0.06"
+      ></a-entity>
+
+      <!--動物配置-->
+      <a-entity
+        obj-model="obj: #dog_obj; mtl: #dog_mtl"
+        position="5 2 -8"
+        rotation="0 20 0"
+        scale="0.5 0.5 0.5"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #monkey_obj; mtl: #monkey_mtl"
+        position="7 2 -7"
+        rotation="0 180 0"
+        scale="0.5 0.5 0.5"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #bird_obj; mtl: #bird_mtl"
+        position="6 2 -7"
+        rotation="0 -60 0"
+        scale="0.4 0.4 0.4"
+      ></a-entity>
+
+      <!--人の配置-->
+      <a-obj-model
+        src="#boy_obj"
+        mtl="#boy_mtl"
+        position="10 2.15 3"
+        rotation="0 180 0"
+        scale="0.6 0.6 0.6"
+      ></a-obj-model>
+      <a-obj-model
+        src="#boy_obj"
+        mtl="#boy_mtl"
+        position="11 2.15 1.5"
+        rotation="0 -90 0"
+        scale="0.6 0.6 0.6"
+      ></a-obj-model>
+      <a-obj-model
+        src="#boy_obj"
+        mtl="#boy_mtl"
+        position="1 2.15 -24"
+        rotation="0 -60 0"
+        scale="0.6 0.6 0.6"
+      ></a-obj-model>
+      <a-obj-model
+        src="#girl_obj"
+        mtl="#girl_mtl"
+        position="-1 2.15 -24"
+        rotation="0 40 0"
+        scale="0.6 0.6 0.6"
+      ></a-obj-model>
+      <a-obj-model
+        src="#oldman_obj"
+        mtl="#oldman_mtl"
+        position="-10 2.15 -8"
+        rotation="0 50 0"
+        scale="0.6 0.6 0.6"
+      ></a-obj-model>
+      <a-obj-model
+        src="#oldwoman_obj"
+        mtl="#oldwoman_mtl"
+        position="-10 2.15 -6"
+        rotation="0 60 0"
+        scale="0.6 0.6 0.6"
+      ></a-obj-model>
+
+      <!--木の配置-->
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="6 0 -2"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 -10"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="15 0 -20"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 6"
+        rotation="0 30 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="4 0 20"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="5 0 -40"
+        rotation="0 -30 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 -7"
+        rotation="0 -120 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-5 0 2"
+        rotation="0 -180 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-1 0 7"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="25 0 5"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 -20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-25 0 -3"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 -18"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #tree_obj; mtl: #tree_mtl"
+        position="-20 0 20"
+        rotation="0 0 0"
+        scale="0.3 0.3 0.3"
+      ></a-entity>
+
+      <!--家の配置-->
+      <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="-7 0 -15"
+        rotation="0 -30 0"
+        scale="2.1 2.1 2.1"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="5 0 -35"
+        rotation="0 -120 0"
+        scale="2.1 2.1 2.1"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="20 0 -10"
+        rotation="0 -170 0"
+        scale="2.1 2.1 2.1"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="-26 0 -13"
+        rotation="0 -30 0"
+        scale="2.1 2.1 2.1"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="32 0 10"
+        rotation="0 -170 0"
+        scale="2.1 2.1 2.1"
+      ></a-entity>
+      <a-entity
+        obj-model="obj: #woodhouse_obj; mtl: #woodhouse_mtl"
+        position="20 0 40"
+        rotation="0 -170 0"
+        scale="2.1 2.1 2.1"
+      ></a-entity>
+      </a-entity>
 
     <!--ここから共通-->
       <!--光-->
